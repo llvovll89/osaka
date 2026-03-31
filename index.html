@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,7 +11,8 @@
   <meta property="og:image" content="https://osaka-omega.vercel.app/thumbnail.png" />
   <meta property="og:url" content="https://osaka-omega.vercel.app/" />
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
@@ -29,20 +31,31 @@
       --green: #22c55e;
       --purple: #a78bfa;
       --pink: #f9a8d4;
-      --glass: rgba(255,255,255,0.04);
-      --glass2: rgba(255,255,255,0.08);
-      --border: rgba(255,255,255,0.09);
-      --border2: rgba(96,165,250,0.25);
+      --glass: rgba(255, 255, 255, 0.04);
+      --glass2: rgba(255, 255, 255, 0.08);
+      --border: rgba(255, 255, 255, 0.09);
+      --border2: rgba(96, 165, 250, 0.25);
       --white: #ffffff;
       --gray: #8899b0;
       --gray2: #64748b;
       --radius: 18px;
       --radius-sm: 10px;
-      --shadow: 0 8px 32px rgba(0,10,40,0.5);
-      --shadow-blue: 0 8px 32px rgba(37,99,235,0.25);
+      --shadow: 0 8px 32px rgba(0, 10, 40, 0.5);
+      --shadow-blue: 0 8px 32px rgba(37, 99, 235, 0.25);
     }
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Pretendard', sans-serif;
       background: var(--bg0);
@@ -52,1164 +65,2152 @@
     }
 
     /* ─── SCROLLBAR ─── */
-    ::-webkit-scrollbar { width: 5px; }
-    ::-webkit-scrollbar-track { background: var(--bg0); }
-    ::-webkit-scrollbar-thumb { background: var(--blue2); border-radius: 3px; }
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: var(--bg0);
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--blue2);
+      border-radius: 3px;
+    }
 
     /* ─── GLOBAL BACKGROUND ─── */
     body::before {
       content: '';
-      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
       background:
-        radial-gradient(ellipse 70% 60% at 15% 40%, rgba(29,78,216,0.12) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 50% at 85% 20%, rgba(96,165,250,0.08) 0%, transparent 50%),
-        radial-gradient(ellipse 60% 40% at 50% 90%, rgba(30,58,138,0.15) 0%, transparent 60%);
+        radial-gradient(ellipse 70% 60% at 15% 40%, rgba(29, 78, 216, 0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 85% 20%, rgba(96, 165, 250, 0.08) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 40% at 50% 90%, rgba(30, 58, 138, 0.15) 0%, transparent 60%);
     }
 
     /* ─── NAV ─── */
     .nav {
-      position: sticky; top: 0; z-index: 200;
-      display: flex; align-items: center;
-      gap: 0; overflow-x: auto; scrollbar-width: none;
-      background: rgba(2,11,24,0.88);
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      display: flex;
+      align-items: center;
+      gap: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      background: rgba(2, 11, 24, 0.88);
       backdrop-filter: blur(20px) saturate(1.5);
       border-bottom: 1px solid var(--border);
       padding: 0 1rem;
     }
-    .nav::-webkit-scrollbar { display: none; }
-    .nav-logo {
-      font-family: 'Syne', sans-serif;
-      font-size: 1rem; font-weight: 800;
-      background: linear-gradient(135deg, var(--white), var(--blue4));
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text; white-space: nowrap;
-      padding: 0 1rem 0 0.5rem; flex-shrink: 0;
-      border-right: 1px solid var(--border); margin-right: 0.5rem;
+
+    .nav::-webkit-scrollbar {
+      display: none;
     }
+
+    .nav-logo {
+      font-size: 1rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, var(--white), var(--blue4));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      white-space: nowrap;
+      padding: 0 1rem 0 0.5rem;
+      flex-shrink: 0;
+      border-right: 1px solid var(--border);
+      margin-right: 0.5rem;
+    }
+
     .nb {
-      flex-shrink: 0; border: none; background: none;
+      flex-shrink: 0;
+      border: none;
+      background: none;
       font-family: 'Pretendard', sans-serif;
-      font-size: 0.72rem; font-weight: 500;
-      color: var(--gray); cursor: pointer;
-      padding: 1rem 0.85rem; position: relative; white-space: nowrap;
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--gray);
+      cursor: pointer;
+      padding: 1rem 0.85rem;
+      position: relative;
+      white-space: nowrap;
       transition: color 0.2s;
     }
+
     .nb::after {
-      content: ''; position: absolute; bottom: 0; left: 0.85rem; right: 0.85rem;
-      height: 2px; background: var(--blue4);
-      transform: scaleX(0); transition: transform 0.25s; border-radius: 1px;
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0.85rem;
+      right: 0.85rem;
+      height: 2px;
+      background: var(--blue4);
+      transform: scaleX(0);
+      transition: transform 0.25s;
+      border-radius: 1px;
     }
-    .nb.on { color: var(--blue4); }
-    .nb.on::after { transform: scaleX(1); }
+
+    .nb.on {
+      color: var(--blue4);
+    }
+
+    .nb.on::after {
+      transform: scaleX(1);
+    }
 
     /* ─── HERO ─── */
     #hero {
-      min-height: 100vh; position: relative; overflow: hidden;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-align: center; padding: 7rem 2rem 5rem;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 7rem 2rem 5rem;
       z-index: 1;
     }
+
     .hero-anim-bg {
-      position: absolute; inset: 0; pointer-events: none;
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
     }
+
     .orbit {
-      position: absolute; border-radius: 50%;
-      border: 1px solid rgba(96,165,250,0.12);
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(96, 165, 250, 0.12);
     }
-    .orbit-1 { width: 700px; height: 700px; top: 50%; left: 50%;
-      transform: translate(-50%,-50%); animation: spin 40s linear infinite; }
-    .orbit-2 { width: 480px; height: 480px; top: 50%; left: 50%;
-      transform: translate(-50%,-50%); animation: spin 28s linear infinite reverse; }
-    .orbit-3 { width: 280px; height: 280px; top: 50%; left: 50%;
-      transform: translate(-50%,-50%); animation: spin 18s linear infinite; }
-    @keyframes spin { to { transform: translate(-50%,-50%) rotate(360deg); } }
+
+    .orbit-1 {
+      width: 700px;
+      height: 700px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: spin 40s linear infinite;
+    }
+
+    .orbit-2 {
+      width: 480px;
+      height: 480px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: spin 28s linear infinite reverse;
+    }
+
+    .orbit-3 {
+      width: 280px;
+      height: 280px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: spin 18s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
 
     .hero-eyebrow {
-      font-size: 0.72rem; letter-spacing: 0.3em; text-transform: uppercase;
-      color: var(--blue4); font-weight: 700; margin-bottom: 1.5rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--blue4);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
       animation: fadeUp 0.7s ease both;
     }
+
     .hero-title {
-      font-family: 'Syne', sans-serif;
-      font-size: clamp(2.8rem, 9vw, 6.5rem); font-weight: 800; line-height: 1.05;
+      font-size: clamp(2.8rem, 9vw, 6.5rem);
+      font-weight: 800;
+      line-height: 1.05;
       background: linear-gradient(135deg, #fff 0%, #bfdbfe 55%, #60a5fa 100%);
-      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      background-clip: text; margin-bottom: 1rem;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
       animation: fadeUp 0.7s ease 0.15s both;
     }
+
     .hero-sub {
-      font-size: 1.05rem; color: var(--blue6); margin-bottom: 2.5rem;
+      font-size: 1.05rem;
+      color: var(--blue6);
+      margin-bottom: 2.5rem;
       animation: fadeUp 0.7s ease 0.3s both;
     }
+
     .hero-pills {
-      display: flex; flex-wrap: wrap; gap: 0.6rem;
-      justify-content: center; margin-bottom: 3rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      justify-content: center;
+      margin-bottom: 3rem;
       animation: fadeUp 0.7s ease 0.45s both;
     }
+
     .pill {
-      background: var(--glass2); border: 1px solid var(--border2);
-      backdrop-filter: blur(10px); border-radius: 100px;
-      padding: 0.35rem 1rem; font-size: 0.78rem; color: var(--blue5);
+      background: var(--glass2);
+      border: 1px solid var(--border2);
+      backdrop-filter: blur(10px);
+      border-radius: 100px;
+      padding: 0.35rem 1rem;
+      font-size: 0.78rem;
+      color: var(--blue5);
     }
+
     .hero-scroll {
       animation: fadeUp 0.7s ease 0.6s both, bounce 2s ease 1.5s infinite;
-      color: var(--gray2); font-size: 0.75rem; display: flex;
-      flex-direction: column; align-items: center; gap: 0.4rem;
+      color: var(--gray2);
+      font-size: 0.75rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.4rem;
     }
-    .hero-scroll svg { opacity: 0.5; }
-    @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
-    @keyframes fadeUp { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
-    @keyframes fadeDown { from { opacity:0; transform:translateY(-20px); } to { opacity:1; transform:translateY(0); } }
+
+    .hero-scroll svg {
+      opacity: 0.5;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(6px);
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(28px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
     /* cherry blossom petals */
     .petal {
-      position: absolute; width: 8px; height: 8px;
-      background: rgba(255,182,193,0.5); border-radius: 50% 0;
-      animation: petFall linear infinite; top: -10px; pointer-events: none;
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: rgba(255, 182, 193, 0.5);
+      border-radius: 50% 0;
+      animation: petFall linear infinite;
+      top: -10px;
+      pointer-events: none;
     }
+
     @keyframes petFall {
-      0%   { transform: translateY(0) rotate(0deg) translateX(0); opacity: 0.8; }
-      50%  { transform: translateY(50vh) rotate(360deg) translateX(30px); }
-      100% { transform: translateY(105vh) rotate(720deg) translateX(-20px); opacity: 0; }
+      0% {
+        transform: translateY(0) rotate(0deg) translateX(0);
+        opacity: 0.8;
+      }
+
+      50% {
+        transform: translateY(50vh) rotate(360deg) translateX(30px);
+      }
+
+      100% {
+        transform: translateY(105vh) rotate(720deg) translateX(-20px);
+        opacity: 0;
+      }
     }
 
     /* ─── SECTION WRAPPER ─── */
-    .sec-wrap { position: relative; z-index: 1; }
+    .sec-wrap {
+      position: relative;
+      z-index: 1;
+    }
+
     .sec {
-      max-width: 1140px; margin: 0 auto;
-      padding: 4.5rem 1.5rem;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 4.5rem 0.75rem;
     }
-    .sec-head { margin-bottom: 2.5rem; }
+
+    .sec-head {
+      margin-bottom: 2.5rem;
+    }
+
     .sec-label {
-      font-size: 0.68rem; letter-spacing: 0.25em; text-transform: uppercase;
-      color: var(--blue4); font-weight: 700; margin-bottom: 0.4rem;
+      font-size: 0.68rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--blue4);
+      font-weight: 700;
+      margin-bottom: 0.4rem;
     }
+
     .sec-title {
-      font-family: 'Syne', sans-serif;
-      font-size: 1.85rem; font-weight: 800; line-height: 1.2;
-      display: flex; align-items: center; gap: 0.5rem;
+      font-size: 1.85rem;
+      font-weight: 800;
+      line-height: 1.2;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
+
     .sec-bar {
-      width: 48px; height: 3px; border-radius: 2px;
+      width: 48px;
+      height: 3px;
+      border-radius: 2px;
       background: linear-gradient(90deg, var(--blue3), transparent);
       margin-top: 0.75rem;
     }
 
     /* ─── GLASS CARD ─── */
     .card {
-      background: var(--glass); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.5rem;
-      box-shadow: var(--shadow); backdrop-filter: blur(8px);
+      background: var(--glass);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
       transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
     }
+
     .card:hover {
       transform: translateY(-4px);
-      box-shadow: var(--shadow-blue); border-color: var(--border2);
+      box-shadow: var(--shadow-blue);
+      border-color: var(--border2);
     }
 
     /* ─── FLIGHT ─── */
-    .flight-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .flight-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
     .flight-card {
-      background: linear-gradient(135deg, rgba(29,78,216,0.18) 0%, rgba(10,31,64,0.7) 100%);
-      border: 1px solid rgba(96,165,250,0.28); border-radius: var(--radius); padding: 2rem;
-      position: relative; overflow: hidden;
+      background: linear-gradient(135deg, rgba(29, 78, 216, 0.18) 0%, rgba(10, 31, 64, 0.7) 100%);
+      border: 1px solid rgba(96, 165, 250, 0.28);
+      border-radius: var(--radius);
+      padding: 2rem 1.25rem;
+      position: relative;
+      overflow: hidden;
     }
+
     .flight-card::after {
-      content: '✈'; position: absolute; right: 1.2rem; top: 50%;
-      transform: translateY(-50%); font-size: 4.5rem; opacity: 0.06; pointer-events: none;
+      content: '✈';
+      position: absolute;
+      right: 1.2rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 4.5rem;
+      opacity: 0.06;
+      pointer-events: none;
     }
+
     .fc-dir {
-      font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--blue4); font-weight: 700; margin-bottom: 0.6rem;
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--blue4);
+      font-weight: 700;
+      margin-bottom: 0.6rem;
     }
+
     .fc-num {
-      display: inline-flex; align-items: center;
-      background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.35);
-      color: var(--gold2); border-radius: 100px; padding: 0.15rem 0.65rem;
-      font-size: 0.72rem; font-weight: 700; margin-bottom: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      color: var(--gold2);
+      border-radius: 100px;
+      padding: 0.15rem 0.65rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      margin-bottom: 0.9rem;
     }
+
     .fc-route {
-      font-size: 1.1rem; font-weight: 700; margin-bottom: 0.2rem;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
       color: var(--blue6);
     }
+
     .fc-time {
-      font-family: 'Syne', sans-serif; font-size: 2.4rem; font-weight: 800;
-      color: var(--white); line-height: 1; margin-bottom: 0.6rem;
+      font-size: 2.4rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1;
+      margin-bottom: 0.6rem;
     }
-    .fc-detail { font-size: 0.78rem; color: var(--gray); line-height: 1.7; }
+
+    .fc-detail {
+      font-size: 0.78rem;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
     .fc-arrow {
-      display: flex; align-items: center; gap: 0.5rem;
-      margin: 0.5rem 0; color: var(--blue4); font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0.5rem 0;
+      color: var(--blue4);
+      font-size: 0.8rem;
     }
-    .fc-arrow-line { flex: 1; height: 1px; background: rgba(96,165,250,0.3); }
+
+    .fc-arrow-line {
+      flex: 1;
+      height: 1px;
+      background: rgba(96, 165, 250, 0.3);
+    }
+
     .fc-arrow-dot {
-      width: 6px; height: 6px; border-radius: 50%; background: var(--blue4); flex-shrink: 0;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--blue4);
+      flex-shrink: 0;
     }
 
     /* ─── ITINERARY ─── */
-    .iti-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; }
+    .iti-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+    }
+
     .day-card {
-      background: linear-gradient(180deg, rgba(29,78,216,0.12) 0%, rgba(6,20,40,0.85) 100%);
-      border: 1px solid rgba(96,165,250,0.18); border-radius: var(--radius); padding: 1.5rem;
-      position: relative; overflow: hidden; min-height: 380px;
+      background: linear-gradient(180deg, rgba(29, 78, 216, 0.12) 0%, rgba(6, 20, 40, 0.85) 100%);
+      border: 1px solid rgba(96, 165, 250, 0.18);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      min-height: 380px;
     }
+
     .day-card::before {
-      content: ''; position: absolute; top: 0; left: 0; right: 0;
-      height: 3px; background: linear-gradient(90deg, var(--blue2), var(--blue4));
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--blue2), var(--blue4));
     }
+
     .day-n {
-      font-family: 'Syne', sans-serif; font-size: 3.5rem; font-weight: 800;
-      color: rgba(96,165,250,0.15); line-height: 1; margin-bottom: 0.1rem;
+      font-size: 3rem;
+      font-weight: 800;
+      color: rgba(96, 165, 250, 0.15);
+      line-height: 1;
+      margin-bottom: 0.125rem;
     }
-    .day-date { font-size: 0.72rem; color: var(--blue4); font-weight: 700; letter-spacing: 0.05em; margin-bottom: 1.2rem; }
-    .day-events { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+
+    .day-date {
+      font-size: 0.72rem;
+      color: var(--blue4);
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 1.2rem;
+    }
+
+    .day-events {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
     .ev {
-      display: flex; gap: 0.6rem; font-size: 0.8rem; line-height: 1.45;
+      display: flex;
+      gap: 0.6rem;
+      font-size: 0.8rem;
+      line-height: 1.45;
     }
-    .ev-t { color: var(--blue4); font-weight: 700; font-size: 0.68rem; flex-shrink: 0; width: 36px; padding-top: 1px; }
-    .ev-c { color: var(--blue6); }
-    .ev-c strong { color: var(--white); font-weight: 700; }
+
+    .ev-t {
+      color: var(--blue4);
+      font-weight: 700;
+      font-size: 0.68rem;
+      flex-shrink: 0;
+      width: 36px;
+      padding-top: 1px;
+    }
+
+    .ev-c {
+      color: var(--blue6);
+    }
+
+    .ev-c strong {
+      color: var(--white);
+      font-weight: 700;
+    }
+
     .day-badge {
-      display: inline-block; margin-top: 1rem;
-      background: rgba(245,158,11,0.12); border: 1px solid rgba(245,158,11,0.3);
-      color: var(--gold2); border-radius: 100px; padding: 0.2rem 0.65rem;
-      font-size: 0.68rem; font-weight: 700;
+      display: inline-block;
+      margin-top: 1rem;
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: var(--gold2);
+      border-radius: 100px;
+      padding: 0.2rem 0.65rem;
+      font-size: 0.68rem;
+      font-weight: 700;
     }
 
     /* ─── TRANSPORT ─── */
-    .transport-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-    .steps { display: flex; flex-direction: column; gap: 0; position: relative; }
+    .transport-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      position: relative;
+    }
+
     .steps::before {
-      content: ''; position: absolute; left: 18px; top: 20px; bottom: 20px;
-      width: 2px; background: linear-gradient(180deg, var(--blue3), transparent);
+      content: '';
+      position: absolute;
+      left: 18px;
+      top: 20px;
+      bottom: 20px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--blue3), transparent);
     }
-    .step { display: flex; gap: 1.2rem; align-items: flex-start; padding-bottom: 1.5rem; position: relative; z-index: 1; }
+
+    .step {
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start;
+      padding-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
     .step-ico {
-      width: 38px; height: 38px; border-radius: 50%; background: var(--blue2);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1rem; flex-shrink: 0; box-shadow: 0 0 0 4px rgba(37,99,235,0.15);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--blue2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
     }
-    .step-body h4 { font-size: 0.88rem; font-weight: 700; margin-bottom: 0.2rem; }
-    .step-body p { font-size: 0.76rem; color: var(--gray); line-height: 1.55; }
+
+    .step-body h4 {
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .step-body p {
+      font-size: 0.76rem;
+      color: var(--gray);
+      line-height: 1.55;
+    }
+
     .step-badge {
-      display: inline-block; margin-top: 0.3rem;
-      background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.25);
-      color: #4ade80; border-radius: 100px; padding: 0.1rem 0.55rem;
-      font-size: 0.68rem; font-weight: 700;
+      display: inline-block;
+      margin-top: 0.3rem;
+      background: rgba(34, 197, 94, 0.1);
+      border: 1px solid rgba(34, 197, 94, 0.25);
+      color: #4ade80;
+      border-radius: 100px;
+      padding: 0.1rem 0.55rem;
+      font-size: 0.68rem;
+      font-weight: 700;
     }
 
     /* ICOCA card */
     .icoca-wrap {
       background: linear-gradient(135deg, #0d2a5e 0%, #06142a 100%);
-      border: 1px solid rgba(96,165,250,0.25); border-radius: var(--radius);
-      padding: 2rem; margin-top: 1.5rem;
+      border: 1px solid rgba(96, 165, 250, 0.25);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-top: 1.5rem;
     }
-    .icoca-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+
+    .icoca-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
     .icoca-logo {
-      width: 56px; height: 36px; background: linear-gradient(135deg,#22c55e,#15803d);
-      border-radius: 8px; display: flex; align-items: center; justify-content: center;
-      font-weight: 900; font-size: 0.65rem; letter-spacing: -0.03em; color: white; flex-shrink: 0;
+      width: 56px;
+      height: 36px;
+      background: linear-gradient(135deg, #22c55e, #15803d);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 0.65rem;
+      letter-spacing: -0.03em;
+      color: white;
+      flex-shrink: 0;
     }
-    .icoca-title { font-size: 1.05rem; font-weight: 700; }
-    .icoca-sub { font-size: 0.75rem; color: var(--gray); }
-    .icoca-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 1rem; }
-    .icoca-step { display: flex; gap: 0.7rem; align-items: flex-start; }
+
+    .icoca-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+    }
+
+    .icoca-sub {
+      font-size: 0.75rem;
+      color: var(--gray);
+    }
+
+    .icoca-steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+    }
+
+    .icoca-step {
+      display: flex;
+      gap: 0.7rem;
+      align-items: flex-start;
+    }
+
     .icoca-n {
-      width: 26px; height: 26px; border-radius: 50%;
-      background: rgba(96,165,250,0.12); border: 1px solid var(--blue4);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.72rem; font-weight: 800; color: var(--blue4); flex-shrink: 0;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: rgba(96, 165, 250, 0.12);
+      border: 1px solid var(--blue4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--blue4);
+      flex-shrink: 0;
     }
-    .icoca-step-text h5 { font-size: 0.82rem; font-weight: 700; margin-bottom: 0.15rem; }
-    .icoca-step-text p { font-size: 0.72rem; color: var(--gray); line-height: 1.5; }
+
+    .icoca-step-text h5 {
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 0.15rem;
+    }
+
+    .icoca-step-text p {
+      font-size: 0.72rem;
+      color: var(--gray);
+      line-height: 1.5;
+    }
 
     /* ─── RESTAURANT (infinite scroll) ─── */
-    .filter-bar { display: flex; gap: 0.6rem; margin-bottom: 2rem; flex-wrap: wrap; }
+    .filter-bar {
+      display: flex;
+      gap: 0.6rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
     .ftab {
-      padding: 0.38rem 1.1rem; border-radius: 100px;
-      border: 1px solid var(--border); background: var(--glass);
-      color: var(--gray); font-size: 0.78rem; font-weight: 500;
-      cursor: pointer; font-family: 'Pretendard', sans-serif;
+      padding: 0.38rem 1.1rem;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      background: var(--glass);
+      color: var(--gray);
+      font-size: 0.78rem;
+      font-weight: 500;
+      cursor: pointer;
+      font-family: 'Pretendard', sans-serif;
       transition: all 0.25s;
     }
-    .ftab:hover { border-color: var(--border2); color: var(--blue5); }
-    .ftab.on { background: var(--blue2); border-color: var(--blue2); color: #fff; }
+
+    .ftab:hover {
+      border-color: var(--border2);
+      color: var(--blue5);
+    }
+
+    .ftab.on {
+      background: var(--blue2);
+      border-color: var(--blue2);
+      color: #fff;
+    }
 
     .rest-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
       gap: 1.25rem;
     }
+
     .rest-card {
-      background: var(--glass); border: 1px solid var(--border);
-      border-radius: var(--radius); overflow: hidden;
+      background: var(--glass);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
       transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
       animation: fadeUp 0.45s ease both;
     }
+
     .rest-card:hover {
-      transform: translateY(-5px); box-shadow: var(--shadow-blue); border-color: var(--border2);
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-blue);
+      border-color: var(--border2);
     }
+
     .rest-thumb {
-      height: 110px; display: flex; align-items: center; justify-content: center;
+      height: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-size: 3.2rem;
-      background: linear-gradient(135deg, rgba(29,78,216,0.18), rgba(6,20,40,0.6));
+      background: linear-gradient(135deg, rgba(29, 78, 216, 0.18), rgba(6, 20, 40, 0.6));
     }
-    .rest-body { padding: 1.1rem; }
-    .rest-type { font-size: 0.62rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.35rem; }
-    .t-yaki { color: #f87171; }
-    .t-sushi { color: #4ade80; }
-    .t-dessert { color: #f9a8d4; }
-    .rest-name { font-size: 0.97rem; font-weight: 700; margin-bottom: 0.15rem; }
-    .rest-name-jp { font-size: 0.72rem; color: var(--gray); margin-bottom: 0.5rem; }
-    .rest-stars { color: var(--gold); font-size: 0.78rem; margin-bottom: 0.35rem; }
-    .rest-loc { font-size: 0.72rem; color: var(--gray); display: flex; align-items: center; gap: 0.2rem; margin-bottom: 0.6rem; }
+
+    .rest-body {
+      padding: 1.1rem;
+    }
+
+    .rest-type {
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+
+    .t-yaki {
+      color: #f87171;
+    }
+
+    .t-sushi {
+      color: #4ade80;
+    }
+
+    .t-dessert {
+      color: #f9a8d4;
+    }
+
+    .rest-name {
+      font-size: 0.97rem;
+      font-weight: 700;
+      margin-bottom: 0.15rem;
+    }
+
+    .rest-name-jp {
+      font-size: 0.72rem;
+      color: var(--gray);
+      margin-bottom: 0.5rem;
+    }
+
+    .rest-stars {
+      color: var(--gold);
+      font-size: 0.78rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .rest-loc {
+      font-size: 0.72rem;
+      color: var(--gray);
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+      margin-bottom: 0.6rem;
+    }
+
     .rest-price {
-      display: inline-block; margin-bottom: 0.55rem;
-      background: rgba(245,158,11,0.1); border: 1px solid rgba(245,158,11,0.3);
-      color: var(--gold2); border-radius: 100px; padding: 0.15rem 0.6rem;
-      font-size: 0.7rem; font-weight: 700;
+      display: inline-block;
+      margin-bottom: 0.55rem;
+      background: rgba(245, 158, 11, 0.1);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: var(--gold2);
+      border-radius: 100px;
+      padding: 0.15rem 0.6rem;
+      font-size: 0.7rem;
+      font-weight: 700;
     }
-    .rest-desc { font-size: 0.74rem; color: var(--gray); line-height: 1.55; }
+
+    .rest-desc {
+      font-size: 0.74rem;
+      color: var(--gray);
+      line-height: 1.55;
+    }
+
     .scroll-sentinel {
-      height: 60px; display: flex; align-items: center; justify-content: center;
-      color: var(--gray2); font-size: 0.8rem; gap: 0.5rem;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray2);
+      font-size: 0.8rem;
+      gap: 0.5rem;
     }
+
     .spinner {
-      width: 20px; height: 20px; border: 2px solid var(--border);
-      border-top-color: var(--blue4); border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--border);
+      border-top-color: var(--blue4);
+      border-radius: 50%;
       animation: spinA 0.8s linear infinite;
     }
-    @keyframes spinA { to { transform: rotate(360deg); } }
+
+    @keyframes spinA {
+      to {
+        transform: rotate(360deg);
+      }
+    }
 
     /* ─── ONSEN ─── */
-    .onsen-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px,1fr)); gap: 1.25rem; }
+    .onsen-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 1.25rem;
+    }
+
     .onsen-card {
-      background: linear-gradient(160deg, rgba(20,40,90,0.6) 0%, rgba(6,14,30,0.85) 100%);
-      border: 1px solid rgba(167,139,250,0.2); border-radius: var(--radius); padding: 1.5rem;
-      position: relative; overflow: hidden;
+      background: linear-gradient(160deg, rgba(20, 40, 90, 0.6) 0%, rgba(6, 14, 30, 0.85) 100%);
+      border: 1px solid rgba(167, 139, 250, 0.2);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      position: relative;
+      overflow: hidden;
       transition: transform 0.3s, box-shadow 0.3s;
     }
-    .onsen-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(167,139,250,0.15); }
-    .onsen-card::after { content: '♨'; position: absolute; right: 1rem; top: 1rem; font-size: 2.2rem; opacity: 0.15; }
-    .onsen-tag {
-      display: inline-block; margin-bottom: 0.75rem;
-      background: rgba(167,139,250,0.12); border: 1px solid rgba(167,139,250,0.3);
-      color: var(--purple); border-radius: 100px; padding: 0.18rem 0.65rem;
-      font-size: 0.65rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+
+    .onsen-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(167, 139, 250, 0.15);
     }
-    .onsen-name { font-size: 1rem; font-weight: 700; margin-bottom: 0.15rem; }
-    .onsen-jp { font-size: 0.75rem; color: var(--gray); margin-bottom: 0.75rem; }
-    .onsen-info { font-size: 0.76rem; color: var(--blue6); line-height: 1.65; }
-    .onsen-price { margin-top: 0.75rem; font-size: 0.78rem; color: var(--gold2); font-weight: 700; }
+
+    .onsen-card::after {
+      content: '♨';
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      font-size: 2.2rem;
+      opacity: 0.15;
+    }
+
+    .onsen-tag {
+      display: inline-block;
+      margin-bottom: 0.75rem;
+      background: rgba(167, 139, 250, 0.12);
+      border: 1px solid rgba(167, 139, 250, 0.3);
+      color: var(--purple);
+      border-radius: 100px;
+      padding: 0.18rem 0.65rem;
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .onsen-name {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.15rem;
+    }
+
+    .onsen-jp {
+      font-size: 0.75rem;
+      color: var(--gray);
+      margin-bottom: 0.75rem;
+    }
+
+    .onsen-info {
+      font-size: 0.76rem;
+      color: var(--blue6);
+      line-height: 1.65;
+    }
+
+    .onsen-price {
+      margin-top: 0.75rem;
+      font-size: 0.78rem;
+      color: var(--gold2);
+      font-weight: 700;
+    }
+
     .onsen-tip {
-      margin-top: 0.5rem; font-size: 0.7rem; color: var(--gray);
-      background: rgba(255,255,255,0.04); border-radius: 6px; padding: 0.4rem 0.6rem;
+      margin-top: 0.5rem;
+      font-size: 0.7rem;
+      color: var(--gray);
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 6px;
+      padding: 0.4rem 0.6rem;
     }
 
     /* ─── ACCOMMODATION ─── */
-    .hotel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 1.25rem; }
+    .hotel-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
     .hotel-card {
-      background: var(--glass); border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 1.5rem;
+      background: var(--glass);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
       transition: transform 0.3s, border-color 0.3s;
     }
-    .hotel-card:hover { transform: translateY(-4px); border-color: var(--border2); }
-    .h-tier {
-      font-size: 0.62rem; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.45rem;
+
+    .hotel-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border2);
     }
-    .tier-budget { color: var(--green); }
-    .tier-mid { color: var(--blue4); }
-    .tier-luxury { color: var(--pink); }
-    .h-name { font-size: 0.97rem; font-weight: 700; margin-bottom: 0.2rem; }
-    .h-area { font-size: 0.74rem; color: var(--gray); margin-bottom: 0.65rem; display: flex; align-items: center; gap: 0.2rem; }
-    .h-price { font-size: 0.82rem; color: var(--gold2); font-weight: 700; margin-bottom: 0.55rem; }
-    .h-desc { font-size: 0.74rem; color: var(--gray); line-height: 1.55; margin-bottom: 0.75rem; }
-    .h-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+    .h-tier {
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.45rem;
+    }
+
+    .tier-budget {
+      color: var(--green);
+    }
+
+    .tier-mid {
+      color: var(--blue4);
+    }
+
+    .tier-luxury {
+      color: var(--pink);
+    }
+
+    .h-name {
+      font-size: 0.97rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+
+    .h-area {
+      font-size: 0.74rem;
+      color: var(--gray);
+      margin-bottom: 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 0.2rem;
+    }
+
+    .h-price {
+      font-size: 0.82rem;
+      color: var(--gold2);
+      font-weight: 700;
+      margin-bottom: 0.55rem;
+    }
+
+    .h-desc {
+      font-size: 0.74rem;
+      color: var(--gray);
+      line-height: 1.55;
+      margin-bottom: 0.75rem;
+    }
+
+    .h-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+
     .h-tag {
-      background: rgba(255,255,255,0.05); border-radius: 100px;
-      padding: 0.15rem 0.55rem; font-size: 0.65rem; color: var(--gray2);
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 100px;
+      padding: 0.15rem 0.55rem;
+      font-size: 0.65rem;
+      color: var(--gray2);
     }
 
     /* ─── CHECKLIST ─── */
-    .cl-progress { margin-bottom: 2rem; }
-    .cl-bar-wrap { height: 6px; background: rgba(255,255,255,0.08); border-radius: 3px; overflow: hidden; margin-top: 0.4rem; }
-    .cl-bar { height: 100%; background: linear-gradient(90deg, var(--blue2), var(--blue4)); border-radius: 3px; transition: width 0.5s ease; }
-    .cl-stat { font-size: 0.8rem; color: var(--gray); display: flex; justify-content: space-between; align-items: center; }
-    .cl-stat span { color: var(--blue4); font-weight: 700; }
-    .cl-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1.25rem; }
+    .cl-progress {
+      margin-bottom: 2rem;
+    }
+
+    .cl-bar-wrap {
+      height: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-top: 0.4rem;
+    }
+
+    .cl-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--blue2), var(--blue4));
+      border-radius: 3px;
+      transition: width 0.5s ease;
+    }
+
+    .cl-stat {
+      font-size: 0.8rem;
+      color: var(--gray);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cl-stat span {
+      color: var(--blue4);
+      font-weight: 700;
+    }
+
+    .cl-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.25rem;
+    }
+
     .cl-cat {
-      background: var(--glass); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem;
+      background: var(--glass);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.4rem;
     }
+
     .cl-cat-title {
-      font-size: 0.82rem; font-weight: 700; color: var(--blue4);
-      display: flex; align-items: center; gap: 0.5rem; margin-bottom: 1rem;
-      padding-bottom: 0.75rem; border-bottom: 1px solid var(--border);
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--blue4);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border);
     }
+
     .cl-item {
-      display: flex; align-items: center; gap: 0.7rem;
-      padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.04);
-      cursor: pointer; user-select: none;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      padding: 0.5rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      cursor: pointer;
+      user-select: none;
     }
-    .cl-item:last-child { border-bottom: none; }
-    .cl-item label { display: flex; align-items: center; gap: 0.7rem; cursor: pointer; width: 100%; }
+
+    .cl-item:last-child {
+      border-bottom: none;
+    }
+
+    .cl-item label {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      cursor: pointer;
+      width: 100%;
+    }
+
     .cl-cb {
-      width: 17px; height: 17px; accent-color: var(--blue4); cursor: pointer; flex-shrink: 0;
+      width: 17px;
+      height: 17px;
+      accent-color: var(--blue4);
+      cursor: pointer;
+      flex-shrink: 0;
     }
-    .cl-text { font-size: 0.8rem; color: var(--blue6); transition: all 0.25s; }
-    .cl-item.done .cl-text { text-decoration: line-through; color: var(--gray2); opacity: 0.55; }
-    .cl-important { font-size: 0.6rem; color: var(--red); font-weight: 700; margin-left: auto; }
+
+    .cl-text {
+      font-size: 0.8rem;
+      color: var(--blue6);
+      transition: all 0.25s;
+    }
+
+    .cl-item.done .cl-text {
+      text-decoration: line-through;
+      color: var(--gray2);
+      opacity: 0.55;
+    }
+
+    .cl-important {
+      font-size: 0.6rem;
+      color: var(--red);
+      font-weight: 700;
+      margin-left: auto;
+    }
 
     /* ─── EXCHANGE RATE ─── */
     .fx-widget {
-      background: linear-gradient(135deg, rgba(29,78,216,0.2) 0%, rgba(6,20,40,0.8) 100%);
-      border: 1px solid var(--border2); border-radius: 24px; padding: 3rem 2.5rem;
+      background: linear-gradient(135deg, rgba(29, 78, 216, 0.2) 0%, rgba(6, 20, 40, 0.8) 100%);
+      border: 1px solid var(--border2);
+      border-radius: 24px;
+      padding: 3rem 2.5rem;
       text-align: center;
     }
-    .fx-subtitle { font-size: 0.8rem; color: var(--gray); margin-bottom: 0.5rem; }
+
+    .fx-subtitle {
+      font-size: 0.8rem;
+      color: var(--gray);
+      margin-bottom: 0.5rem;
+    }
+
     .fx-rate {
-      font-family: 'Syne', sans-serif; font-size: 3.2rem; font-weight: 800;
-      color: var(--blue4); margin: 0.5rem 0;
+      font-size: 3.2rem;
+      font-weight: 800;
+      color: var(--blue4);
+      margin: 0.5rem 0;
       font-variant-numeric: tabular-nums;
     }
-    .fx-unit { font-size: 0.82rem; color: var(--gray); margin-bottom: 2rem; }
-    .fx-conv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px,1fr)); gap: 0.85rem; margin-bottom: 2rem; }
-    .fx-conv {
-      background: var(--glass2); border: 1px solid var(--border); border-radius: 12px; padding: 0.9rem 0.75rem;
+
+    .fx-unit {
+      font-size: 0.82rem;
+      color: var(--gray);
+      margin-bottom: 2rem;
     }
-    .fx-conv-jpy { font-size: 1rem; font-weight: 800; color: var(--gold2); }
-    .fx-conv-krw { font-size: 0.72rem; color: var(--gray); margin-top: 0.2rem; }
+
+    .fx-conv-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin-bottom: 2rem;
+    }
+
+    .fx-conv {
+      background: var(--glass2);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 0.9rem 0.75rem;
+    }
+
+    .fx-conv-jpy {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--gold2);
+    }
+
+    .fx-conv-krw {
+      font-size: 0.72rem;
+      color: var(--gray);
+      margin-top: 0.2rem;
+    }
+
     .fx-calc {
-      display: flex; gap: 0.75rem; align-items: center; justify-content: center; flex-wrap: wrap;
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
       margin-top: 1.5rem;
     }
+
     .fx-input {
-      background: rgba(255,255,255,0.06); border: 1px solid var(--border2);
-      border-radius: 12px; padding: 0.65rem 1rem; color: white;
-      font-size: 1rem; font-family: 'Pretendard', sans-serif;
-      width: 150px; text-align: center;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border2);
+      border-radius: 12px;
+      padding: 0.65rem 1rem;
+      color: white;
+      font-size: 1rem;
+      font-family: 'Pretendard', sans-serif;
+      width: 150px;
+      text-align: center;
     }
-    .fx-input:focus { outline: none; border-color: var(--blue4); }
-    .fx-eq { font-size: 1.4rem; color: var(--gray2); }
-    .fx-result { font-size: 1.25rem; font-weight: 700; color: var(--blue4); min-width: 140px; }
-    .fx-updated { font-size: 0.7rem; color: var(--gray2); margin-top: 1.25rem; }
-    .fx-loading { animation: pulse 1.5s ease infinite; }
-    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+    .fx-input:focus {
+      outline: none;
+      border-color: var(--blue4);
+    }
+
+    .fx-eq {
+      font-size: 1.4rem;
+      color: var(--gray2);
+    }
+
+    .fx-result {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--blue4);
+      min-width: 140px;
+    }
+
+    .fx-updated {
+      font-size: 0.7rem;
+      color: var(--gray2);
+      margin-top: 1.25rem;
+    }
+
+    .fx-loading {
+      animation: pulse 1.5s ease infinite;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1;
+      }
+
+      50% {
+        opacity: 0.4;
+      }
+    }
 
     /* ─── TIPS ─── */
-    .tip-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); gap: 1rem; }
-    .tip-card {
-      background: var(--glass); border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 1.1rem; display: flex; gap: 0.9rem; transition: all 0.25s;
+    .tip-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
     }
-    .tip-card:hover { border-color: var(--border2); background: var(--glass2); transform: translateY(-2px); }
-    .tip-ico { font-size: 1.4rem; flex-shrink: 0; }
-    .tip-body h4 { font-size: 0.83rem; font-weight: 700; color: var(--blue4); margin-bottom: 0.2rem; }
-    .tip-body p { font-size: 0.73rem; color: var(--gray); line-height: 1.55; }
+
+    .tip-card {
+      background: var(--glass);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.1rem;
+      display: flex;
+      gap: 0.9rem;
+      transition: all 0.25s;
+    }
+
+    .tip-card:hover {
+      border-color: var(--border2);
+      background: var(--glass2);
+      transform: translateY(-2px);
+    }
+
+    .tip-ico {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .tip-body h4 {
+      font-size: 0.83rem;
+      font-weight: 700;
+      color: var(--blue4);
+      margin-bottom: 0.2rem;
+    }
+
+    .tip-body p {
+      font-size: 0.73rem;
+      color: var(--gray);
+      line-height: 1.55;
+    }
 
     /* ─── WARNINGS ─── */
-    .warn-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px,1fr)); gap: 1rem; }
-    .warn-card {
-      background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.18);
-      border-radius: var(--radius-sm); padding: 1rem; display: flex; gap: 0.75rem;
+    .warn-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1rem;
     }
-    .warn-ico { font-size: 1.1rem; flex-shrink: 0; }
-    .warn-body h4 { font-size: 0.8rem; font-weight: 700; color: #fca5a5; margin-bottom: 0.2rem; }
-    .warn-body p { font-size: 0.73rem; color: var(--gray); line-height: 1.5; }
+
+    .warn-card {
+      background: rgba(239, 68, 68, 0.06);
+      border: 1px solid rgba(239, 68, 68, 0.18);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .warn-ico {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .warn-body h4 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #fca5a5;
+      margin-bottom: 0.2rem;
+    }
+
+    .warn-body p {
+      font-size: 0.73rem;
+      color: var(--gray);
+      line-height: 1.5;
+    }
 
     /* ─── SCROLL ANIMATION ─── */
-    .js-fade { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
-    .js-fade.visible { opacity: 1; transform: translateY(0); }
+    .js-fade {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .js-fade.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
     /* ─── FOOTER ─── */
     footer {
-      position: relative; z-index: 1; text-align: center;
-      padding: 3rem 1.5rem; color: var(--gray2); font-size: 0.78rem;
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 3rem 1.5rem;
+      color: var(--gray2);
+      font-size: 0.78rem;
       border-top: 1px solid var(--border);
     }
-    footer strong { color: var(--blue5); }
+
+    footer strong {
+      color: var(--blue5);
+    }
 
     /* ─── DIVIDER ─── */
     .divider {
-      max-width: 1140px; margin: 0 auto; padding: 0 1.5rem;
-      height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent);
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
     }
 
     /* ─── RESPONSIVE ─── */
     @media (max-width: 900px) {
-      .iti-grid { grid-template-columns: 1fr 1fr; }
-      .transport-wrap { grid-template-columns: 1fr; }
+      .iti-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .transport-wrap {
+        grid-template-columns: 1fr;
+      }
     }
+
     @media (max-width: 600px) {
-      .flight-grid { grid-template-columns: 1fr; }
-      .iti-grid { grid-template-columns: 1fr; }
-      .fx-rate { font-size: 2.4rem; }
+      .flight-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .iti-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .fx-rate {
+        font-size: 2.4rem;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<!-- NAV -->
-<nav class="nav">
-  <div class="nav-logo">🗾 오사카 2026</div>
-  <button class="nb on" onclick="navTo('#hero')">홈</button>
-  <button class="nb" onclick="navTo('#flight')">항공편</button>
-  <button class="nb" onclick="navTo('#itinerary')">일정</button>
-  <button class="nb" onclick="navTo('#transport')">교통·이코카</button>
-  <button class="nb" onclick="navTo('#restaurants')">맛집·디저트</button>
-  <button class="nb" onclick="navTo('#onsen')">온천·료칸</button>
-  <button class="nb" onclick="navTo('#hotels')">숙소</button>
-  <button class="nb" onclick="navTo('#checklist')">체크리스트</button>
-  <button class="nb" onclick="navTo('#exchange')">환율</button>
-  <button class="nb" onclick="navTo('#tips')">꿀팁</button>
-  <button class="nb" onclick="navTo('#warnings')">주의사항</button>
-</nav>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="nav-logo">🗾 오사카 2026</div>
+    <button class="nb on" onclick="navTo('#hero')">홈</button>
+    <button class="nb" onclick="navTo('#flight')">항공편</button>
+    <button class="nb" onclick="navTo('#itinerary')">일정</button>
+    <button class="nb" onclick="navTo('#transport')">교통·이코카</button>
+    <button class="nb" onclick="navTo('#restaurants')">맛집·디저트</button>
+    <button class="nb" onclick="navTo('#onsen')">온천·료칸</button>
+    <button class="nb" onclick="navTo('#hotels')">숙소</button>
+    <button class="nb" onclick="navTo('#checklist')">체크리스트</button>
+    <button class="nb" onclick="navTo('#exchange')">환율</button>
+    <button class="nb" onclick="navTo('#tips')">꿀팁</button>
+    <button class="nb" onclick="navTo('#warnings')">주의사항</button>
+  </nav>
 
-<!-- HERO -->
-<section id="hero" class="sec-wrap">
-  <div class="hero-anim-bg">
-    <div class="orbit orbit-1"></div>
-    <div class="orbit orbit-2"></div>
-    <div class="orbit orbit-3"></div>
-    <!-- petals injected by JS -->
-  </div>
-  <div class="hero-eyebrow">✈ Osaka · Japan · 2026</div>
-  <h1 class="hero-title">오사카<br/>3박 4일</h1>
-  <p class="hero-sub">5월 7일 – 10일 &nbsp;·&nbsp; 대구 ↔ 간사이 &nbsp;·&nbsp; 커플 여행 🌸</p>
-  <div class="hero-pills">
-    <span class="pill">🛫 티웨이항공 TW313</span>
-    <span class="pill">🍜 야끼니꾸 · 스시 · 디저트</span>
-    <span class="pill">♨ 온천 · 료칸</span>
-    <span class="pill">🎌 이코카 카드</span>
-    <span class="pill">💴 실시간 환율</span>
-  </div>
-  <div class="hero-scroll">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-    스크롤하여 시작
-  </div>
-</section>
-
-<div class="divider"></div>
-
-<!-- FLIGHT -->
-<div class="sec-wrap js-fade" id="flight">
-  <div class="sec">
-    <div class="sec-head">
-      <div class="sec-label">Flight Information</div>
-      <h2 class="sec-title">✈ 항공편 정보</h2>
-      <div class="sec-bar"></div>
+  <!-- HERO -->
+  <section id="hero" class="sec-wrap">
+    <div class="hero-anim-bg">
+      <div class="orbit orbit-1"></div>
+      <div class="orbit orbit-2"></div>
+      <div class="orbit orbit-3"></div>
+      <!-- petals injected by JS -->
     </div>
-    <div class="flight-grid">
-      <!-- 가는 편 -->
-      <div class="flight-card">
-        <div class="fc-dir">✈ 출발 — 가는 편</div>
-        <div class="fc-num">TW313</div>
-        <div class="fc-route">대구국제공항 (TAE) → 간사이국제공항 (KIX)</div>
-        <div class="fc-arrow">
-          <div class="fc-arrow-dot"></div>
-          <div class="fc-arrow-line"></div>
-          <div class="fc-arrow-dot"></div>
-        </div>
-        <div class="fc-time">16:50 → 18:25</div>
-        <div class="fc-detail">
-          📅 2026년 5월 7일 (목)<br>
-          ⏱ 비행시간 약 1시간 35분<br>
-          🏢 터미널 T1 (간사이 도착)<br>
-          🧳 공항 2시간 전 도착 권장 → 14:50까지
-        </div>
-      </div>
-      <!-- 오는 편 -->
-      <div class="flight-card">
-        <div class="fc-dir">✈ 귀국 — 오는 편</div>
-        <div class="fc-num">TW312</div>
-        <div class="fc-route">간사이국제공항 (KIX) → 대구국제공항 (TAE)</div>
-        <div class="fc-arrow">
-          <div class="fc-arrow-dot"></div>
-          <div class="fc-arrow-line"></div>
-          <div class="fc-arrow-dot"></div>
-        </div>
-        <div class="fc-time">10:40 → 12:10</div>
-        <div class="fc-detail">
-          📅 2026년 5월 10일 (일)<br>
-          ⏱ 비행시간 약 1시간 30분<br>
-          🏢 터미널 T1 (간사이 출발)<br>
-          ⚠️ 공항 2시간 전 도착 권장 → <strong style="color:#f87171">08:40까지!</strong>
-        </div>
-      </div>
+    <div class="hero-eyebrow">✈ Osaka · Japan · 2026</div>
+    <h1 class="hero-title">오사카<br />3박 4일</h1>
+    <p class="hero-sub">5월 7일 – 10일 &nbsp;·&nbsp; 대구 ↔ 간사이 &nbsp;·&nbsp; 커플 여행 🌸</p>
+    <div class="hero-pills">
+      <span class="pill">🛫 티웨이항공 TW313</span>
+      <span class="pill">🍜 야끼니꾸 · 스시 · 디저트</span>
+      <span class="pill">♨ 온천 · 료칸</span>
+      <span class="pill">🎌 이코카 카드</span>
+      <span class="pill">💴 실시간 환율</span>
     </div>
-  </div>
-</div>
+    <div class="hero-scroll">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M12 5v14M5 12l7 7 7-7" />
+      </svg>
+      스크롤하여 시작
+    </div>
+  </section>
 
-<div class="divider"></div>
+  <div class="divider"></div>
 
-<!-- ITINERARY -->
-<div class="sec-wrap js-fade" id="itinerary">
-  <div class="sec">
-    <div class="sec-head">
-      <div class="sec-label">Travel Schedule</div>
-      <h2 class="sec-title">🗓 추천 여행 일정</h2>
-      <div class="sec-bar"></div>
-      <p style="font-size:0.78rem;color:var(--gray);margin-top:0.5rem;">2026.03.31 기준 추천 일정 (미정 → 참고용)</p>
-    </div>
-    <div class="iti-grid">
-      <!-- DAY 1 -->
-      <div class="day-card">
-        <div class="day-n">01</div>
-        <div class="day-date">5월 7일 (목) · 도착일</div>
-        <ul class="day-events">
-          <li class="ev"><span class="ev-t">14:50</span><span class="ev-c">대구공항 도착 (2시간 전)</span></li>
-          <li class="ev"><span class="ev-t">16:50</span><span class="ev-c"><strong>TW313 출발</strong></span></li>
-          <li class="ev"><span class="ev-t">18:25</span><span class="ev-c"><strong>간사이공항 도착</strong> T1</span></li>
-          <li class="ev"><span class="ev-t">19:00</span><span class="ev-c">입국심사 · 이코카 카드 구매</span></li>
-          <li class="ev"><span class="ev-t">19:30</span><span class="ev-c">라피트 or 공항버스로 이동</span></li>
-          <li class="ev"><span class="ev-t">20:30</span><span class="ev-c">호텔 체크인</span></li>
-          <li class="ev"><span class="ev-t">21:00</span><span class="ev-c"><strong>도톤보리</strong> 야경 · 타코야키</span></li>
-          <li class="ev"><span class="ev-t">22:30</span><span class="ev-c">글리코상 포토존 📸</span></li>
-        </ul>
-        <div class="day-badge">✈ 도착일</div>
+  <!-- FLIGHT -->
+  <div class="sec-wrap js-fade" id="flight">
+    <div class="sec">
+      <div class="sec-head">
+        <div class="sec-label">Flight Information</div>
+        <h2 class="sec-title">✈ 항공편 정보</h2>
+        <div class="sec-bar"></div>
       </div>
-      <!-- DAY 2 -->
-      <div class="day-card">
-        <div class="day-n">02</div>
-        <div class="day-date">5월 8일 (금) · 오사카 시내</div>
-        <ul class="day-events">
-          <li class="ev"><span class="ev-t">09:00</span><span class="ev-c">호텔 조식 or 편의점 모닝</span></li>
-          <li class="ev"><span class="ev-t">10:00</span><span class="ev-c"><strong>오사카성</strong> 🏯 & 니시노마루 정원</span></li>
-          <li class="ev"><span class="ev-t">12:30</span><span class="ev-c">구로몬 시장 점심 🦞</span></li>
-          <li class="ev"><span class="ev-t">14:00</span><span class="ev-c"><strong>신사이바시</strong> 쇼핑 💳</span></li>
-          <li class="ev"><span class="ev-t">16:00</span><span class="ev-c">아메리카무라 · 스트릿패션</span></li>
-          <li class="ev"><span class="ev-t">18:00</span><span class="ev-c"><strong>야끼니꾸</strong> 저녁 디너 🥩</span></li>
-          <li class="ev"><span class="ev-t">20:00</span><span class="ev-c">난바 파크스 야경 산책</span></li>
-          <li class="ev"><span class="ev-t">21:30</span><span class="ev-c">551 봉래 슈마이 & 디저트 🍡</span></li>
-        </ul>
-        <div class="day-badge">🏯 오사카 시내</div>
+      <div class="flight-grid">
+        <!-- 가는 편 -->
+        <div class="flight-card">
+          <div class="fc-dir">✈ 출발 — 가는 편</div>
+          <div class="fc-num">TW313</div>
+          <div class="fc-route">대구국제공항 (TAE) → 간사이국제공항 (KIX)</div>
+          <div class="fc-arrow">
+            <div class="fc-arrow-dot"></div>
+            <div class="fc-arrow-line"></div>
+            <div class="fc-arrow-dot"></div>
+          </div>
+          <div class="fc-time">16:50 → 18:25</div>
+          <div class="fc-detail">
+            📅 2026년 5월 7일 (목)<br>
+            ⏱ 비행시간 약 1시간 35분<br>
+            🏢 터미널 T1 (간사이 도착)<br>
+            🧳 공항 2시간 전 도착 권장 → 14:50까지
+          </div>
+        </div>
+        <!-- 오는 편 -->
+        <div class="flight-card">
+          <div class="fc-dir">✈ 귀국 — 오는 편</div>
+          <div class="fc-num">TW312</div>
+          <div class="fc-route">간사이국제공항 (KIX) → 대구국제공항 (TAE)</div>
+          <div class="fc-arrow">
+            <div class="fc-arrow-dot"></div>
+            <div class="fc-arrow-line"></div>
+            <div class="fc-arrow-dot"></div>
+          </div>
+          <div class="fc-time">10:40 → 12:10</div>
+          <div class="fc-detail">
+            📅 2026년 5월 10일 (일)<br>
+            ⏱ 비행시간 약 1시간 30분<br>
+            🏢 터미널 T1 (간사이 출발)<br>
+            ⚠️ 공항 2시간 전 도착 권장 → <strong style="color:#f87171">08:40까지!</strong>
+          </div>
+        </div>
       </div>
-      <!-- DAY 3 -->
-      <div class="day-card">
-        <div class="day-n">03</div>
-        <div class="day-date">5월 9일 (토) · 온천 & 료칸</div>
-        <ul class="day-events">
-          <li class="ev"><span class="ev-t">09:00</span><span class="ev-c">호텔 체크아웃 & 짐 보관</span></li>
-          <li class="ev"><span class="ev-t">10:00</span><span class="ev-c"><strong>우메다</strong> · 루쿠아 · 스카이빌딩 🌇</span></li>
-          <li class="ev"><span class="ev-t">12:00</span><span class="ev-c">우메다 스시 점심 🍣</span></li>
-          <li class="ev"><span class="ev-t">14:00</span><span class="ev-c">이동 → <strong>아리마 온천</strong> ♨ (~1hr)</span></li>
-          <li class="ev"><span class="ev-t">15:30</span><span class="ev-c">료칸 체크인 · 유카타 입기 👘</span></li>
-          <li class="ev"><span class="ev-t">16:00</span><span class="ev-c">온천욕 (킨센 황금탕 · 긴센 은탕)</span></li>
-          <li class="ev"><span class="ev-t">18:30</span><span class="ev-c"><strong>가이세키 료리</strong> (코스 저녁) 🍱</span></li>
-          <li class="ev"><span class="ev-t">21:00</span><span class="ev-c">야경 온천 · 료칸 휴식 🌙</span></li>
-        </ul>
-        <div class="day-badge">♨ 온천 · 료칸</div>
-      </div>
-      <!-- DAY 4 -->
-      <div class="day-card">
-        <div class="day-n">04</div>
-        <div class="day-date">5월 10일 (일) · 귀국일</div>
-        <ul class="day-events">
-          <li class="ev"><span class="ev-t">07:00</span><span class="ev-c"><strong>료칸 체크아웃</strong> ⚠️ 일찍!</span></li>
-          <li class="ev"><span class="ev-t">07:30</span><span class="ev-c">아리마 → 간사이공항 이동 (약 1.5hr)</span></li>
-          <li class="ev"><span class="ev-t">08:40</span><span class="ev-c"><strong>공항 도착</strong> (출발 2시간 전)</span></li>
-          <li class="ev"><span class="ev-t">09:00</span><span class="ev-c">체크인 · 출국심사 · 면세점 쇼핑 🛍</span></li>
-          <li class="ev"><span class="ev-t">10:40</span><span class="ev-c"><strong>TW312 출발</strong> ✈ 귀국!</span></li>
-          <li class="ev"><span class="ev-t">12:10</span><span class="ev-c">대구공항 도착 🏠</span></li>
-        </ul>
-        <div class="day-badge" style="background:rgba(239,68,68,0.12);border-color:rgba(239,68,68,0.3);color:#fca5a5;">⚠️ 조기 출발</div>
-      </div>
-    </div>
-    <div style="margin-top:1rem;padding:1rem 1.25rem;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.25);border-radius:12px;font-size:0.77rem;color:var(--gold2);">
-      💡 <strong>Day 4 주의:</strong> 마지막 날 비행이 10:40이라 아리마 온천에서 07:00 출발해야 합니다. 료칸 예약 시 조기 체크아웃 가능 여부 미리 확인하세요!
     </div>
   </div>
-</div>
 
-<div class="divider"></div>
+  <div class="divider"></div>
 
-<!-- TRANSPORT + ICOCA -->
-<div class="sec-wrap js-fade" id="transport">
-  <div class="sec">
-    <div class="sec-head">
-      <div class="sec-label">Airport Transfer & IC Card</div>
-      <h2 class="sec-title">🚆 공항 교통편 & 이코카</h2>
-      <div class="sec-bar"></div>
-    </div>
-    <div class="transport-wrap">
-      <!-- 교통편 -->
-      <div>
-        <h3 style="font-size:0.95rem;font-weight:700;color:var(--blue4);margin-bottom:1.25rem;">간사이공항 → 오사카 시내</h3>
-        <div class="steps">
-          <div class="step">
-            <div class="step-ico">🚂</div>
-            <div class="step-body">
-              <h4>난카이 라피트 (ラピート) — 추천!</h4>
-              <p>간사이공항 → 난바역 약 38분<br>자유석 1,450엔 / 지정석 1,850엔<br>짐 공간 넓고 쾌적, 커플여행 최적</p>
-              <span class="step-badge">⭐ 가장 편리</span>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-ico">🚃</div>
-            <div class="step-body">
-              <h4>JR 간쿠 쾌속 (はるか 아님)</h4>
-              <p>간사이공항 → 오사카역 약 65분<br>1,210엔 (이코카 사용 가능)<br>저렴하지만 시간이 걸림</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-ico">🚌</div>
-            <div class="step-body">
-              <h4>리무진 버스 (공항버스)</h4>
-              <p>간사이공항 → 주요 호텔·역 직행<br>1,800–2,000엔, 약 50–80분<br>짐이 많을 때 유리</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-ico">🚕</div>
-            <div class="step-body">
-              <h4>택시 (비추)</h4>
-              <p>공항 → 시내 약 7,000–10,000엔<br>심야나 짐이 아주 많을 때만 고려</p>
-            </div>
-          </div>
+  <!-- ITINERARY -->
+  <div class="sec-wrap js-fade" id="itinerary">
+    <div class="sec">
+      <div class="sec-head">
+        <div class="sec-label">Travel Schedule</div>
+        <h2 class="sec-title">🗓 추천 여행 일정</h2>
+        <div class="sec-bar"></div>
+        <p style="font-size:0.78rem;color:var(--gray);margin-top:0.5rem;">2026.03.31 기준 추천 일정 (미정 → 참고용)</p>
+      </div>
+      <div class="iti-grid">
+        <!-- DAY 1 -->
+        <div class="day-card">
+          <div class="day-n">01</div>
+          <div class="day-date">5월 7일 (목) · 도착일</div>
+          <ul class="day-events">
+            <li class="ev"><span class="ev-t">14:50</span><span class="ev-c">대구공항 도착 (2시간 전)</span></li>
+            <li class="ev"><span class="ev-t">16:50</span><span class="ev-c"><strong>TW313 출발</strong></span></li>
+            <li class="ev"><span class="ev-t">18:25</span><span class="ev-c"><strong>간사이공항 도착</strong> T1</span></li>
+            <li class="ev"><span class="ev-t">19:00</span><span class="ev-c">입국심사 · 이코카 카드 구매</span></li>
+            <li class="ev"><span class="ev-t">19:30</span><span class="ev-c">라피트 or 공항버스로 이동</span></li>
+            <li class="ev"><span class="ev-t">20:30</span><span class="ev-c">호텔 체크인</span></li>
+            <li class="ev"><span class="ev-t">21:00</span><span class="ev-c"><strong>도톤보리</strong> 야경 · 타코야키</span></li>
+            <li class="ev"><span class="ev-t">22:30</span><span class="ev-c">글리코상 포토존 📸</span></li>
+          </ul>
+          <div class="day-badge">✈ 도착일</div>
+        </div>
+        <!-- DAY 2 -->
+        <div class="day-card">
+          <div class="day-n">02</div>
+          <div class="day-date">5월 8일 (금) · 오사카 시내</div>
+          <ul class="day-events">
+            <li class="ev"><span class="ev-t">09:00</span><span class="ev-c">호텔 조식 or 편의점 모닝</span></li>
+            <li class="ev"><span class="ev-t">10:00</span><span class="ev-c"><strong>오사카성</strong> 🏯 & 니시노마루 정원</span>
+            </li>
+            <li class="ev"><span class="ev-t">12:30</span><span class="ev-c">구로몬 시장 점심 🦞</span></li>
+            <li class="ev"><span class="ev-t">14:00</span><span class="ev-c"><strong>신사이바시</strong> 쇼핑 💳</span></li>
+            <li class="ev"><span class="ev-t">16:00</span><span class="ev-c">아메리카무라 · 스트릿패션</span></li>
+            <li class="ev"><span class="ev-t">18:00</span><span class="ev-c"><strong>야끼니꾸</strong> 저녁 디너 🥩</span></li>
+            <li class="ev"><span class="ev-t">20:00</span><span class="ev-c">난바 파크스 야경 산책</span></li>
+            <li class="ev"><span class="ev-t">21:30</span><span class="ev-c">551 봉래 슈마이 & 디저트 🍡</span></li>
+          </ul>
+          <div class="day-badge">🏯 오사카 시내</div>
+        </div>
+        <!-- DAY 3 -->
+        <div class="day-card">
+          <div class="day-n">03</div>
+          <div class="day-date">5월 9일 (토) · 온천 & 료칸</div>
+          <ul class="day-events">
+            <li class="ev"><span class="ev-t">09:00</span><span class="ev-c">호텔 체크아웃 & 짐 보관</span></li>
+            <li class="ev"><span class="ev-t">10:00</span><span class="ev-c"><strong>우메다</strong> · 루쿠아 · 스카이빌딩
+                🌇</span></li>
+            <li class="ev"><span class="ev-t">12:00</span><span class="ev-c">우메다 스시 점심 🍣</span></li>
+            <li class="ev"><span class="ev-t">14:00</span><span class="ev-c">이동 → <strong>아리마 온천</strong> ♨
+                (~1hr)</span></li>
+            <li class="ev"><span class="ev-t">15:30</span><span class="ev-c">료칸 체크인 · 유카타 입기 👘</span></li>
+            <li class="ev"><span class="ev-t">16:00</span><span class="ev-c">온천욕 (킨센 황금탕 · 긴센 은탕)</span></li>
+            <li class="ev"><span class="ev-t">18:30</span><span class="ev-c"><strong>가이세키 료리</strong> (코스 저녁) 🍱</span>
+            </li>
+            <li class="ev"><span class="ev-t">21:00</span><span class="ev-c">야경 온천 · 료칸 휴식 🌙</span></li>
+          </ul>
+          <div class="day-badge">♨ 온천 · 료칸</div>
+        </div>
+        <!-- DAY 4 -->
+        <div class="day-card">
+          <div class="day-n">04</div>
+          <div class="day-date">5월 10일 (일) · 귀국일</div>
+          <ul class="day-events">
+            <li class="ev"><span class="ev-t">07:00</span><span class="ev-c"><strong>료칸 체크아웃</strong> ⚠️ 일찍!</span></li>
+            <li class="ev"><span class="ev-t">07:30</span><span class="ev-c">아리마 → 간사이공항 이동 (약 1.5hr)</span></li>
+            <li class="ev"><span class="ev-t">08:40</span><span class="ev-c"><strong>공항 도착</strong> (출발 2시간 전)</span>
+            </li>
+            <li class="ev"><span class="ev-t">09:00</span><span class="ev-c">체크인 · 출국심사 · 면세점 쇼핑 🛍</span></li>
+            <li class="ev"><span class="ev-t">10:40</span><span class="ev-c"><strong>TW312 출발</strong> ✈ 귀국!</span></li>
+            <li class="ev"><span class="ev-t">12:10</span><span class="ev-c">대구공항 도착 🏠</span></li>
+          </ul>
+          <div class="day-badge"
+            style="background:rgba(239,68,68,0.12);border-color:rgba(239,68,68,0.3);color:#fca5a5;">⚠️ 조기 출발</div>
         </div>
       </div>
-      <!-- 시내 교통 -->
-      <div>
-        <h3 style="font-size:0.95rem;font-weight:700;color:var(--blue4);margin-bottom:1.25rem;">오사카 시내 교통</h3>
-        <div class="steps">
-          <div class="step">
-            <div class="step-ico">🚇</div>
-            <div class="step-body">
-              <h4>오사카 메트로 (지하철)</h4>
-              <p>미도스지선·타니마치선 등 8개 노선<br>1회 180–430엔, 이코카 사용 OK<br>주요 관광지 대부분 연결</p>
-              <span class="step-badge">이코카 OK</span>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-ico">🚌</div>
-            <div class="step-body">
-              <h4>오사카 시티버스</h4>
-              <p>1회 230엔, 이코카 사용 OK<br>지하철 안 닿는 구역 커버<br>낮에 관광하기 좋음</p>
-            </div>
-          </div>
-          <div class="step">
-            <div class="step-ico">🎫</div>
-            <div class="step-body">
-              <h4>1일 승차권 (옵션)</h4>
-              <p>메트로 1일권 620엔<br>지하철·버스 무제한 탑승<br>3번 이상 탈 계획이면 이득!</p>
-              <span class="step-badge">3번↑ 이득</span>
-            </div>
-          </div>
-        </div>
+      <div
+        style="margin-top:1rem;padding:1rem 1.25rem;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.25);border-radius:12px;font-size:0.77rem;color:var(--gold2);">
+        💡 <strong>Day 4 주의:</strong> 마지막 날 비행이 10:40이라 아리마 온천에서 07:00 출발해야 합니다. 료칸 예약 시 조기 체크아웃 가능 여부 미리 확인하세요!
       </div>
     </div>
+  </div>
 
-    <!-- ICOCA 사용법 -->
-    <div class="icoca-wrap">
-      <div class="icoca-header">
-        <div class="icoca-logo">ICOCA</div>
+  <div class="divider"></div>
+
+  <!-- TRANSPORT + ICOCA -->
+  <div class="sec-wrap js-fade" id="transport">
+    <div class="sec">
+      <div class="sec-head">
+        <div class="sec-label">Airport Transfer & IC Card</div>
+        <h2 class="sec-title">🚆 공항 교통편 & 이코카</h2>
+        <div class="sec-bar"></div>
+      </div>
+      <div class="transport-wrap">
+        <!-- 교통편 -->
         <div>
-          <div class="icoca-title">이코카 카드 (ICOCA) 사용법</div>
-          <div class="icoca-sub">간사이 지역 IC카드 · 교통+편의점 결제 가능</div>
-        </div>
-      </div>
-      <div class="icoca-steps">
-        <div class="icoca-step">
-          <div class="icoca-n">1</div>
-          <div class="icoca-step-text">
-            <h5>구매 장소</h5>
-            <p>간사이공항 도착 후 JR 매표기 또는 안내센터에서 구입<br>보증금 500엔 포함 2,000엔부터 구입 가능</p>
+          <h3 style="font-size:0.95rem;font-weight:700;color:var(--blue4);margin-bottom:1.25rem;">간사이공항 → 오사카 시내</h3>
+          <div class="steps">
+            <div class="step">
+              <div class="step-ico">🚂</div>
+              <div class="step-body">
+                <h4>난카이 라피트 (ラピート) — 추천!</h4>
+                <p>간사이공항 → 난바역 약 38분<br>자유석 1,450엔 / 지정석 1,850엔<br>짐 공간 넓고 쾌적, 커플여행 최적</p>
+                <span class="step-badge">⭐ 가장 편리</span>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-ico">🚃</div>
+              <div class="step-body">
+                <h4>JR 간쿠 쾌속 (はるか 아님)</h4>
+                <p>간사이공항 → 오사카역 약 65분<br>1,210엔 (이코카 사용 가능)<br>저렴하지만 시간이 걸림</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-ico">🚌</div>
+              <div class="step-body">
+                <h4>리무진 버스 (공항버스)</h4>
+                <p>간사이공항 → 주요 호텔·역 직행<br>1,800–2,000엔, 약 50–80분<br>짐이 많을 때 유리</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-ico">🚕</div>
+              <div class="step-body">
+                <h4>택시 (비추)</h4>
+                <p>공항 → 시내 약 7,000–10,000엔<br>심야나 짐이 아주 많을 때만 고려</p>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="icoca-step">
-          <div class="icoca-n">2</div>
-          <div class="icoca-step-text">
-            <h5>충전 방법</h5>
-            <p>역내 초록색 자동충전기<br>1,000 / 2,000 / 3,000엔 단위<br>최대 20,000엔까지 충전</p>
-          </div>
-        </div>
-        <div class="icoca-step">
-          <div class="icoca-n">3</div>
-          <div class="icoca-step-text">
-            <h5>사용 방법</h5>
-            <p>개찰구 센서에 탭하면 자동 차감<br>세븐일레븐·패밀리마트에서도 결제 가능<br>잔액 부족 시 자동정산기 이용</p>
-          </div>
-        </div>
-        <div class="icoca-step">
-          <div class="icoca-n">4</div>
-          <div class="icoca-step-text">
-            <h5>환불 (귀국 전)</h5>
-            <p>JR 역 창구에서 보증금 500엔 + 잔액 환불<br>수수료 220엔 부과<br>잔액 228엔 이하면 수수료 없음</p>
-          </div>
-        </div>
-        <div class="icoca-step">
-          <div class="icoca-n">5</div>
-          <div class="icoca-step-text">
-            <h5>대안 선택지</h5>
-            <p>스이카 (SUICA): 도쿄 기반이지만 간사이 가능<br>모바일 스이카: iPhone/Android 지원<br>이코카가 간사이에서 가장 편리!</p>
-          </div>
-        </div>
-        <div class="icoca-step">
-          <div class="icoca-n">💡</div>
-          <div class="icoca-step-text">
-            <h5>꿀팁</h5>
-            <p>2장 구매해서 각자 1장씩!<br>커플이 한 장 쓰면 인원 체크 오류 가능<br>7-Eleven ATM에서 엔화 인출도 가능</p>
+        <!-- 시내 교통 -->
+        <div>
+          <h3 style="font-size:0.95rem;font-weight:700;color:var(--blue4);margin-bottom:1.25rem;">오사카 시내 교통</h3>
+          <div class="steps">
+            <div class="step">
+              <div class="step-ico">🚇</div>
+              <div class="step-body">
+                <h4>오사카 메트로 (지하철)</h4>
+                <p>미도스지선·타니마치선 등 8개 노선<br>1회 180–430엔, 이코카 사용 OK<br>주요 관광지 대부분 연결</p>
+                <span class="step-badge">이코카 OK</span>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-ico">🚌</div>
+              <div class="step-body">
+                <h4>오사카 시티버스</h4>
+                <p>1회 230엔, 이코카 사용 OK<br>지하철 안 닿는 구역 커버<br>낮에 관광하기 좋음</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-ico">🎫</div>
+              <div class="step-body">
+                <h4>1일 승차권 (옵션)</h4>
+                <p>메트로 1일권 620엔<br>지하철·버스 무제한 탑승<br>3번 이상 탈 계획이면 이득!</p>
+                <span class="step-badge">3번↑ 이득</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
 
-<div class="divider"></div>
-
-<!-- RESTAURANTS (infinite scroll) -->
-<div class="sec-wrap js-fade" id="restaurants">
-  <div class="sec">
-    <div class="sec-head">
-      <div class="sec-label">Food & Dessert Guide</div>
-      <h2 class="sec-title">🍽 맛집 &amp; 디저트</h2>
-      <div class="sec-bar"></div>
-    </div>
-    <div class="filter-bar">
-      <button class="ftab on" data-filter="all">🔀 전체</button>
-      <button class="ftab" data-filter="yaki">🥩 야끼니꾸</button>
-      <button class="ftab" data-filter="sushi">🍣 스시</button>
-      <button class="ftab" data-filter="dessert">🍡 디저트</button>
-    </div>
-    <div class="rest-grid" id="restGrid"></div>
-    <div class="scroll-sentinel" id="restSentinel">
-      <div class="spinner" id="restSpinner" style="display:none;"></div>
-      <span id="restStatus">더 보기 로딩 중...</span>
-    </div>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- ONSEN & RYOKAN -->
-<div class="sec-wrap js-fade" id="onsen">
-  <div class="sec">
-    <div class="sec-head">
-      <div class="sec-label">Hot Spring & Ryokan</div>
-      <h2 class="sec-title">♨ 온천 &amp; 료칸 추천</h2>
-      <div class="sec-bar"></div>
-      <p style="font-size:0.78rem;color:var(--gray);margin-top:0.5rem;">마지막 날(5월 9일) 체크인 → 5월 10일 조기 체크아웃 기준</p>
-    </div>
-    <div class="onsen-grid">
-      <div class="onsen-card">
-        <div class="onsen-tag">추천 1위 · 당일치기 & 숙박</div>
-        <div class="onsen-name">아리마 온천</div>
-        <div class="onsen-jp">有馬温泉 · Arima Onsen</div>
-        <div class="onsen-info">
-          일본 3대 명온천 중 하나. 오사카에서 전철+버스로 약 1시간 거리.<br>
-          <strong style="color:var(--white)">킨센(금천, 황금탕)</strong>: 탄산수소나트륨·염화나트륨 풍부, 갈색 온천<br>
-          <strong style="color:var(--white)">긴센(은천, 은탕)</strong>: 탄산·라듐 성분, 투명한 탄산 온천<br>
-          두 종류 모두 료칸에서 즐길 수 있어 인기 최상위!
+      <!-- ICOCA 사용법 -->
+      <div class="icoca-wrap">
+        <div class="icoca-header">
+          <div class="icoca-logo">ICOCA</div>
+          <div>
+            <div class="icoca-title">이코카 카드 (ICOCA) 사용법</div>
+            <div class="icoca-sub">간사이 지역 IC카드 · 교통+편의점 결제 가능</div>
+          </div>
         </div>
-        <div class="onsen-price">료칸 숙박: 1인 20,000–50,000엔 / 당일 입욕: 650엔~</div>
-        <div class="onsen-tip">🚆 오사카 → 아리마: 한큐·지하철 환승 후 아리마구치역에서 버스 (약 60–70분)</div>
-      </div>
-      <div class="onsen-card">
-        <div class="onsen-tag">오사카 시내 당일치기</div>
-        <div class="onsen-name">아마미 온천 나니와노유</div>
-        <div class="onsen-jp">あまみ温泉 なにわの湯</div>
-        <div class="onsen-info">
-          오사카 텐진바시 근처. 시내에서 당일치기로 가기 가장 쉬운 온천.<br>
-          노천탕·사우나·식당 완비. 수건·유카타 대여 가능.<br>
-          가족탕(개인실) 예약 시 커플 프라이빗 온천 이용 가능!
+        <div class="icoca-steps">
+          <div class="icoca-step">
+            <div class="icoca-n">1</div>
+            <div class="icoca-step-text">
+              <h5>구매 장소</h5>
+              <p>간사이공항 도착 후 JR 매표기 또는 안내센터에서 구입<br>보증금 500엔 포함 2,000엔부터 구입 가능</p>
+            </div>
+          </div>
+          <div class="icoca-step">
+            <div class="icoca-n">2</div>
+            <div class="icoca-step-text">
+              <h5>충전 방법</h5>
+              <p>역내 초록색 자동충전기<br>1,000 / 2,000 / 3,000엔 단위<br>최대 20,000엔까지 충전</p>
+            </div>
+          </div>
+          <div class="icoca-step">
+            <div class="icoca-n">3</div>
+            <div class="icoca-step-text">
+              <h5>사용 방법</h5>
+              <p>개찰구 센서에 탭하면 자동 차감<br>세븐일레븐·패밀리마트에서도 결제 가능<br>잔액 부족 시 자동정산기 이용</p>
+            </div>
+          </div>
+          <div class="icoca-step">
+            <div class="icoca-n">4</div>
+            <div class="icoca-step-text">
+              <h5>환불 (귀국 전)</h5>
+              <p>JR 역 창구에서 보증금 500엔 + 잔액 환불<br>수수료 220엔 부과<br>잔액 228엔 이하면 수수료 없음</p>
+            </div>
+          </div>
+          <div class="icoca-step">
+            <div class="icoca-n">5</div>
+            <div class="icoca-step-text">
+              <h5>대안 선택지</h5>
+              <p>스이카 (SUICA): 도쿄 기반이지만 간사이 가능<br>모바일 스이카: iPhone/Android 지원<br>이코카가 간사이에서 가장 편리!</p>
+            </div>
+          </div>
+          <div class="icoca-step">
+            <div class="icoca-n">💡</div>
+            <div class="icoca-step-text">
+              <h5>꿀팁</h5>
+              <p>2장 구매해서 각자 1장씩!<br>커플이 한 장 쓰면 인원 체크 오류 가능<br>7-Eleven ATM에서 엔화 인출도 가능</p>
+            </div>
+          </div>
         </div>
-        <div class="onsen-price">입장료: 평일 800엔 / 주말 900엔, 가족탕 별도</div>
-        <div class="onsen-tip">📍 텐진바시스지로쿠초메역 도보 5분</div>
-      </div>
-      <div class="onsen-card">
-        <div class="onsen-tag">료칸 추천 · 아리마</div>
-        <div class="onsen-name">아리마 그랑드 호텔 텐신칸</div>
-        <div class="onsen-jp">有馬グランドホテル 天神館</div>
-        <div class="onsen-info">
-          아리마 온천 최대 규모 료칸 중 하나.<br>
-          킨센·긴센 둘 다 즐길 수 있는 대욕장.<br>
-          가이세키(懐石) 코스 저녁 포함. 로맨틱한 커플룸 가능.
-        </div>
-        <div class="onsen-price">1박 2식 포함: 1인 25,000–45,000엔</div>
-        <div class="onsen-tip">💡 일찍 예약할수록 저렴! 금토 vs 일수 가격 차이 큼</div>
-      </div>
-      <div class="onsen-card">
-        <div class="onsen-tag">전통 료칸 · 아리마</div>
-        <div class="onsen-name">료칸 고쇼보</div>
-        <div class="onsen-jp">旅館 御所坊 · Goshoboh</div>
-        <div class="onsen-info">
-          1191년 창업한 아리마 온천의 유서 깊은 전통 료칸.<br>
-          객실 수 적어 조용하고 프라이빗. 유카타+가이세키 포함.<br>
-          100% 자가 원천 온천. 커플 여행자들에게 강추!
-        </div>
-        <div class="onsen-price">1박 2식: 1인 35,000–65,000엔</div>
-        <div class="onsen-tip">⚠️ 조기 체크아웃 가능 여부 예약 시 반드시 확인하세요!</div>
-      </div>
-      <div class="onsen-card">
-        <div class="onsen-tag">료칸 추천 · 아리마</div>
-        <div class="onsen-name">유노하나소</div>
-        <div class="onsen-jp">湯の花荘</div>
-        <div class="onsen-info">
-          중급 가격대 아리마 료칸. 킨센+긴센 둘 다 보유.<br>
-          2인실 다다미방, 아침·저녁 가이세키 포함.<br>
-          접근성 좋고 가성비 우수. 초행자 커플에게 추천.
-        </div>
-        <div class="onsen-price">1박 2식: 1인 18,000–30,000엔</div>
-        <div class="onsen-tip">📞 예약: 자란(じゃらん) 또는 료칸 공식 사이트 이용</div>
-      </div>
-      <div class="onsen-card">
-        <div class="onsen-tag">온천 예절 · 꼭 읽기!</div>
-        <div class="onsen-name">온천 이용 기본 예절</div>
-        <div class="onsen-jp">温泉マナー</div>
-        <div class="onsen-info">
-          ① 입욕 전 반드시 몸 샤워 (가케유: かけ湯)<br>
-          ② 수영복·속옷 착용 금지 (나체 입욕이 원칙)<br>
-          ③ 타투(문신) 있으면 입욕 불가 시설 多<br>
-          ④ 머리카락 온천에 담그지 않기 (위로 묶기)<br>
-          ⑤ 입욕 후 충분한 수분 보충하기
-        </div>
-        <div class="onsen-price">타투 있으시면 예약 전 시설에 문의 필수!</div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="divider"></div>
+  <div class="divider"></div>
 
-<!-- HOTELS -->
-<div class="sec-wrap js-fade" id="hotels">
-  <div class="sec">
-    <div class="sec-head">
-      <div class="sec-label">Accommodation</div>
-      <h2 class="sec-title">🏨 숙소 추천</h2>
-      <div class="sec-bar"></div>
-      <p style="font-size:0.78rem;color:var(--gray);margin-top:0.5rem;">5월 7–9일 (2박) 오사카 시내 숙소 기준 · 2026.03.31 기준</p>
-    </div>
-    <div class="hotel-grid">
-      <div class="hotel-card">
-        <div class="h-tier tier-budget">💚 가성비 추천</div>
-        <div class="h-name">도요코인 신오사카 역앞 본관</div>
-        <div class="h-area">📍 신오사카 · 교통 편리</div>
-        <div class="h-price">1박 7,000–13,000엔 (2인실 기준)</div>
-        <div class="h-desc">일본 대표 비즈니스 호텔. 깨끗하고 교통 편리. 아침 조식 무료 포함. 처음 오사카 여행에 가장 무난한 선택.</div>
-        <div class="h-tags">
-          <span class="h-tag">조식 포함</span><span class="h-tag">신오사카역 도보</span><span class="h-tag">교통 편리</span>
-        </div>
+  <!-- RESTAURANTS (infinite scroll) -->
+  <div class="sec-wrap js-fade" id="restaurants">
+    <div class="sec">
+      <div class="sec-head">
+        <div class="sec-label">Food & Dessert Guide</div>
+        <h2 class="sec-title">🍽 맛집 &amp; 디저트</h2>
+        <div class="sec-bar"></div>
       </div>
-      <div class="hotel-card">
-        <div class="h-tier tier-mid">💙 중급 추천</div>
-        <div class="h-name">크로스 호텔 오사카</div>
-        <div class="h-area">📍 신사이바시 · 도톤보리 도보권</div>
-        <div class="h-price">1박 15,000–25,000엔 (2인실 기준)</div>
-        <div class="h-desc">세련된 디자인 호텔. 신사이바시·도톤보리 도보 10분. 침대 넓고 인테리어 예쁨. 커플여행 강추!</div>
-        <div class="h-tags">
-          <span class="h-tag">디자인 호텔</span><span class="h-tag">도톤보리 근접</span><span class="h-tag">커플 추천</span>
-        </div>
+      <div class="filter-bar">
+        <button class="ftab on" data-filter="all">🔀 전체</button>
+        <button class="ftab" data-filter="yaki">🥩 야끼니꾸</button>
+        <button class="ftab" data-filter="sushi">🍣 스시</button>
+        <button class="ftab" data-filter="dessert">🍡 디저트</button>
       </div>
-      <div class="hotel-card">
-        <div class="h-tier tier-mid">💙 중급 추천</div>
-        <div class="h-name">호텔 몬토레 그라스미어 오사카</div>
-        <div class="h-area">📍 난바 · 도심 최중심</div>
-        <div class="h-price">1박 14,000–22,000엔 (2인실 기준)</div>
-        <div class="h-desc">스코틀랜드 고성풍 유럽 클래식 인테리어. 난바 도보권. 레스토랑 수준 높고 뷰 좋은 객실 보유.</div>
-        <div class="h-tags">
-          <span class="h-tag">클래식 인테리어</span><span class="h-tag">난바 도보</span><span class="h-tag">뷰 좋음</span>
-        </div>
+      <div class="rest-grid" id="restGrid"></div>
+      <div class="scroll-sentinel" id="restSentinel">
+        <div class="spinner" id="restSpinner" style="display:none;"></div>
+        <span id="restStatus">더 보기 로딩 중...</span>
       </div>
-      <div class="hotel-card">
-        <div class="h-tier tier-mid">💙 중급 추천</div>
-        <div class="h-name">더블트리 by 힐튼 오사카</div>
-        <div class="h-area">📍 우메다 · 나카노시마</div>
-        <div class="h-price">1박 20,000–32,000엔 (2인실 기준)</div>
-        <div class="h-desc">힐튼 중급 브랜드. 도착 시 웰컴 쿠키 유명. 우메다 쇼핑가 인접. 수영장·피트니스 완비.</div>
-        <div class="h-tags">
-          <span class="h-tag">힐튼 브랜드</span><span class="h-tag">우메다 인접</span><span class="h-tag">수영장</span>
-        </div>
-      </div>
-      <div class="hotel-card">
-        <div class="h-tier tier-luxury">💖 고급</div>
-        <div class="h-name">콘래드 오사카</div>
-        <div class="h-area">📍 나카노시마 · 40층 이상 전망</div>
-        <div class="h-price">1박 40,000–90,000엔 (2인실 기준)</div>
-        <div class="h-desc">오사카 최상급 호텔 중 하나. 33–40층에 위치, 시내 파노라마 뷰. 스파·레스토랑 최고 수준. 특별한 날 추천.</div>
-        <div class="h-tags">
-          <span class="h-tag">럭셔리</span><span class="h-tag">파노라마 뷰</span><span class="h-tag">스파 포함</span><span class="h-tag">특별한 날</span>
-        </div>
-      </div>
-      <div class="hotel-card">
-        <div class="h-tier tier-budget">💚 가성비 추천</div>
-        <div class="h-name">오사카 엑셀 호텔 토큐 (난바)</div>
-        <div class="h-area">📍 난바 · 최중심부</div>
-        <div class="h-price">1박 12,000–20,000엔 (2인실 기준)</div>
-        <div class="h-desc">도큐 호텔 체인. 난바역 직결. 깔끔하고 안전. 한국어 가능 직원 상주. 초행 커플에게 무난하고 좋음.</div>
-        <div class="h-tags">
-          <span class="h-tag">역 직결</span><span class="h-tag">한국어 대응</span><span class="h-tag">난바 최중심</span>
-        </div>
-      </div>
-    </div>
-    <div style="margin-top:1.25rem;padding:1rem 1.25rem;background:rgba(96,165,250,0.07);border:1px solid rgba(96,165,250,0.2);border-radius:12px;font-size:0.76rem;color:var(--blue5);">
-      💡 <strong>예약 팁:</strong> 골든위크(4/29–5/5) 직후라 5월 7–10일은 상대적으로 가격 저렴! 하지만 인기 숙소는 일찍 마감되니 2–3개월 전 예약 권장. 자란(じゃらん), 부킹닷컴, 아고다, 익스피디아 비교 필수!
     </div>
   </div>
-</div>
 
-<div class="divider"></div>
+  <div class="divider"></div>
 
-<!-- CHECKLIST (IndexedDB) -->
-<div class="sec-wrap js-fade" id="checklist">
-  <div class="sec">
-    <div class="sec-head">
-      <div class="sec-label">Packing Checklist · IndexedDB 저장</div>
-      <h2 class="sec-title">🎒 준비물 체크리스트</h2>
-      <div class="sec-bar"></div>
-    </div>
-    <div class="cl-progress">
-      <div class="cl-stat">
-        <span>전체 준비 완료율</span>
-        <span id="clPct">0%</span>
+  <!-- ONSEN & RYOKAN -->
+  <div class="sec-wrap js-fade" id="onsen">
+    <div class="sec">
+      <div class="sec-head">
+        <div class="sec-label">Hot Spring & Ryokan</div>
+        <h2 class="sec-title">♨ 온천 &amp; 료칸 추천</h2>
+        <div class="sec-bar"></div>
+        <p style="font-size:0.78rem;color:var(--gray);margin-top:0.5rem;">마지막 날(5월 9일) 체크인 → 5월 10일 조기 체크아웃 기준</p>
       </div>
-      <div class="cl-bar-wrap"><div class="cl-bar" id="clBar" style="width:0%"></div></div>
-      <div style="font-size:0.72rem;color:var(--gray2);margin-top:0.4rem;">✅ 체크하면 브라우저에 자동 저장됩니다 (IndexedDB)</div>
-    </div>
-    <div class="cl-grid" id="checklistGrid"></div>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- EXCHANGE RATE -->
-<div class="sec-wrap js-fade" id="exchange">
-  <div class="sec">
-    <div class="sec-head">
-      <div class="sec-label">Live Exchange Rate</div>
-      <h2 class="sec-title">💴 실시간 엔화 환율</h2>
-      <div class="sec-bar"></div>
-    </div>
-    <div class="fx-widget">
-      <div class="fx-subtitle">현재 환율 (JPY/KRW)</div>
-      <div class="fx-rate fx-loading" id="fxRate">로딩 중...</div>
-      <div class="fx-unit">1 JPY = <span id="fxKrw">—</span> KRW</div>
-      <div class="fx-conv-grid" id="fxConvGrid">
-        <!-- injected by JS -->
+      <div class="onsen-grid">
+        <div class="onsen-card">
+          <div class="onsen-tag">추천 1위 · 당일치기 & 숙박</div>
+          <div class="onsen-name">아리마 온천</div>
+          <div class="onsen-jp">有馬温泉 · Arima Onsen</div>
+          <div class="onsen-info">
+            일본 3대 명온천 중 하나. 오사카에서 전철+버스로 약 1시간 거리.<br>
+            <strong style="color:var(--white)">킨센(금천, 황금탕)</strong>: 탄산수소나트륨·염화나트륨 풍부, 갈색 온천<br>
+            <strong style="color:var(--white)">긴센(은천, 은탕)</strong>: 탄산·라듐 성분, 투명한 탄산 온천<br>
+            두 종류 모두 료칸에서 즐길 수 있어 인기 최상위!
+          </div>
+          <div class="onsen-price">료칸 숙박: 1인 20,000–50,000엔 / 당일 입욕: 650엔~</div>
+          <div class="onsen-tip">🚆 오사카 → 아리마: 한큐·지하철 환승 후 아리마구치역에서 버스 (약 60–70분)</div>
+        </div>
+        <div class="onsen-card">
+          <div class="onsen-tag">오사카 시내 당일치기</div>
+          <div class="onsen-name">아마미 온천 나니와노유</div>
+          <div class="onsen-jp">あまみ温泉 なにわの湯</div>
+          <div class="onsen-info">
+            오사카 텐진바시 근처. 시내에서 당일치기로 가기 가장 쉬운 온천.<br>
+            노천탕·사우나·식당 완비. 수건·유카타 대여 가능.<br>
+            가족탕(개인실) 예약 시 커플 프라이빗 온천 이용 가능!
+          </div>
+          <div class="onsen-price">입장료: 평일 800엔 / 주말 900엔, 가족탕 별도</div>
+          <div class="onsen-tip">📍 텐진바시스지로쿠초메역 도보 5분</div>
+        </div>
+        <div class="onsen-card">
+          <div class="onsen-tag">료칸 추천 · 아리마</div>
+          <div class="onsen-name">아리마 그랑드 호텔 텐신칸</div>
+          <div class="onsen-jp">有馬グランドホテル 天神館</div>
+          <div class="onsen-info">
+            아리마 온천 최대 규모 료칸 중 하나.<br>
+            킨센·긴센 둘 다 즐길 수 있는 대욕장.<br>
+            가이세키(懐石) 코스 저녁 포함. 로맨틱한 커플룸 가능.
+          </div>
+          <div class="onsen-price">1박 2식 포함: 1인 25,000–45,000엔</div>
+          <div class="onsen-tip">💡 일찍 예약할수록 저렴! 금토 vs 일수 가격 차이 큼</div>
+        </div>
+        <div class="onsen-card">
+          <div class="onsen-tag">전통 료칸 · 아리마</div>
+          <div class="onsen-name">료칸 고쇼보</div>
+          <div class="onsen-jp">旅館 御所坊 · Goshoboh</div>
+          <div class="onsen-info">
+            1191년 창업한 아리마 온천의 유서 깊은 전통 료칸.<br>
+            객실 수 적어 조용하고 프라이빗. 유카타+가이세키 포함.<br>
+            100% 자가 원천 온천. 커플 여행자들에게 강추!
+          </div>
+          <div class="onsen-price">1박 2식: 1인 35,000–65,000엔</div>
+          <div class="onsen-tip">⚠️ 조기 체크아웃 가능 여부 예약 시 반드시 확인하세요!</div>
+        </div>
+        <div class="onsen-card">
+          <div class="onsen-tag">료칸 추천 · 아리마</div>
+          <div class="onsen-name">유노하나소</div>
+          <div class="onsen-jp">湯の花荘</div>
+          <div class="onsen-info">
+            중급 가격대 아리마 료칸. 킨센+긴센 둘 다 보유.<br>
+            2인실 다다미방, 아침·저녁 가이세키 포함.<br>
+            접근성 좋고 가성비 우수. 초행자 커플에게 추천.
+          </div>
+          <div class="onsen-price">1박 2식: 1인 18,000–30,000엔</div>
+          <div class="onsen-tip">📞 예약: 자란(じゃらん) 또는 료칸 공식 사이트 이용</div>
+        </div>
+        <div class="onsen-card">
+          <div class="onsen-tag">온천 예절 · 꼭 읽기!</div>
+          <div class="onsen-name">온천 이용 기본 예절</div>
+          <div class="onsen-jp">温泉マナー</div>
+          <div class="onsen-info">
+            ① 입욕 전 반드시 몸 샤워 (가케유: かけ湯)<br>
+            ② 수영복·속옷 착용 금지 (나체 입욕이 원칙)<br>
+            ③ 타투(문신) 있으면 입욕 불가 시설 多<br>
+            ④ 머리카락 온천에 담그지 않기 (위로 묶기)<br>
+            ⑤ 입욕 후 충분한 수분 보충하기
+          </div>
+          <div class="onsen-price">타투 있으시면 예약 전 시설에 문의 필수!</div>
+        </div>
       </div>
-      <div class="fx-calc">
-        <input type="number" class="fx-input" id="fxInput" placeholder="엔 입력" />
-        <span class="fx-eq">엔</span>
-        <span class="fx-eq">=</span>
-        <span class="fx-result" id="fxOutput">— 원</span>
-      </div>
-      <div class="fx-calc" style="margin-top:0.75rem;">
-        <input type="number" class="fx-input" id="fxInputKrw" placeholder="원 입력" />
-        <span class="fx-eq">원</span>
-        <span class="fx-eq">=</span>
-        <span class="fx-result" id="fxOutputJpy">— 엔</span>
-      </div>
-      <div class="fx-updated" id="fxUpdated">환율 정보 로딩 중...</div>
-    </div>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- TIPS -->
-<div class="sec-wrap js-fade" id="tips">
-  <div class="sec">
-    <div class="sec-head">
-      <div class="sec-label">Travel Tips</div>
-      <h2 class="sec-title">💡 오사카 여행 꿀팁</h2>
-      <div class="sec-bar"></div>
-    </div>
-    <div class="tip-grid">
-      <div class="tip-card"><div class="tip-ico">🗺</div><div class="tip-body"><h4>오프라인 지도 필수</h4><p>Google Maps를 미리 오프라인 저장해두세요. 데이터 로밍 없어도 길 찾기 가능!</p></div></div>
-      <div class="tip-card"><div class="tip-ico">📱</div><div class="tip-body"><h4>데이터 유심/포켓와이파이</h4><p>공항에서 미리 유심 또는 포켓와이파이 수령. 한국 출발 전 온라인 예약 시 더 저렴!</p></div></div>
-      <div class="tip-card"><div class="tip-ico">🏪</div><div class="tip-body"><h4>편의점 활용 극대화</h4><p>세븐일레븐·패밀리마트·로손에서 아침 해결 가능. ATM에서 엔화 인출도 OK (7-Eleven 추천)</p></div></div>
-      <div class="tip-card"><div class="tip-ico">🛍</div><div class="tip-body"><h4>면세 쇼핑 (Tax Free)</h4><p>1일 5,000엔 이상 구매 시 소비세(10%) 면세. 여권 지참 필수. 드럭스토어 면세 가능!</p></div></div>
-      <div class="tip-card"><div class="tip-ico">💊</div><div class="tip-body"><h4>마츠모토키요시 쇼핑</h4><p>드럭스토어 왕. 화장품·의약품·과자 저렴. 하나마스크·로이히 파스·용각산 꼭 구매!</p></div></div>
-      <div class="tip-card"><div class="tip-ico">🌸</div><div class="tip-body"><h4>5월 오사카 날씨</h4><p>평균 18–25°C. 낮엔 티셔츠, 저녁엔 얇은 겉옷 필요. 일교차 있으니 레이어링 준비!</p></div></div>
-      <div class="tip-card"><div class="tip-ico">🍜</div><div class="tip-body"><h4>오사카 3대 먹거리</h4><p>타코야키(文의 타코야키 본점), 오코노미야키(보테쥬), 쿠시카츠(루나 본점). 줄 서도 가야 해!</p></div></div>
-      <div class="tip-card"><div class="tip-ico">🚶</div><div class="tip-body"><h4>도톤보리 걸어서 탐방</h4><p>글리코상 → 히구마 도넛 → 쿠레프 → 킨류 라멘 순으로 도보 탐방. 1–2시간 소요.</p></div></div>
-      <div class="tip-card"><div class="tip-ico">🌃</div><div class="tip-body"><h4>야경 명소</h4><p>우메다 스카이빌딩 공중정원(1,500엔), 아베노하루카스 전망대, 도톤보리 야간 유람선!</p></div></div>
-      <div class="tip-card"><div class="tip-ico">💴</div><div class="tip-body"><h4>현금 vs 카드</h4><p>일본은 현금 문화 강함. 작은 식당은 현금만 받는 경우 多. 엔화 현금 최소 50,000엔 준비 권장.</p></div></div>
-      <div class="tip-card"><div class="tip-ico">🗑</div><div class="tip-body"><h4>쓰레기통이 없다!</h4><p>일본은 거리에 쓰레기통 거의 없음. 편의점에서 산 것은 편의점 쓰레기통 이용. 조그만 봉지 챙기기!</p></div></div>
-      <div class="tip-card"><div class="tip-ico">🎎</div><div class="tip-body"><h4>에스컬레이터 규칙</h4><p>오사카에서는 에스컬레이터 오른쪽 서기! (도쿄는 왼쪽) 왼쪽은 빠르게 걷는 사람을 위해 비우기.</p></div></div>
-    </div>
-  </div>
-</div>
-
-<div class="divider"></div>
-
-<!-- WARNINGS -->
-<div class="sec-wrap js-fade" id="warnings">
-  <div class="sec">
-    <div class="sec-head">
-      <div class="sec-label">Precautions</div>
-      <h2 class="sec-title">⚠️ 주의사항</h2>
-      <div class="sec-bar"></div>
-    </div>
-    <div class="warn-grid">
-      <div class="warn-card"><div class="warn-ico">⏰</div><div class="warn-body"><h4>귀국편 시간 엄수!</h4><p>TW312 10:40 출발. 최소 8:40까지 공항 도착. 아리마 온천에서 07:00 출발 필요. 절대 늦으면 안 됨!</p></div></div>
-      <div class="warn-card"><div class="warn-ico">🛂</div><div class="warn-body"><h4>입국신고서 작성</h4><p>일본 입국 시 Visit Japan Web 미리 등록하면 QR코드로 빠른 입국 가능. 출발 전 반드시 등록!</p></div></div>
-      <div class="warn-card"><div class="warn-ico">💳</div><div class="warn-body"><h4>여행자 보험 가입</h4><p>해외여행 중 의료비는 매우 비쌈. 출발 전 카드사 여행자보험 또는 별도 보험 가입 필수!</p></div></div>
-      <div class="warn-card"><div class="warn-ico">🌀</div><div class="warn-body"><h4>지진 대비</h4><p>일본은 지진 다발 지역. 호텔 체크인 시 비상구 확인. 지진 발생 시 책상 아래 대피, 엘리베이터 금지.</p></div></div>
-      <div class="warn-card"><div class="warn-ico">🍺</div><div class="warn-body"><h4>공공장소 음주</h4><p>일본은 공원 등에서 공개 음주 허용되나 민폐 행위 금지. 큰 소리, 늦은 밤 시끄럽게 하지 않기.</p></div></div>
-      <div class="warn-card"><div class="warn-ico">📷</div><div class="warn-body"><h4>사진 촬영 주의</h4><p>사원·신사 내부, 사람 얼굴, 가게 내부 촬영 전 허가 확인. 특히 게이샤·마이코 무단 촬영 절대 금지!</p></div></div>
-      <div class="warn-card"><div class="warn-ico">🚭</div><div class="warn-body"><h4>흡연 구역 엄수</h4><p>오사카 시내 거리 흡연 금지 구역 多. 지정 흡연소에서만 흡연. 위반 시 벌금 부과될 수 있음.</p></div></div>
-      <div class="warn-card"><div class="warn-ico">♨</div><div class="warn-body"><h4>온천 문신 제한</h4><p>문신(타투) 있으면 대부분 온천 입욕 불가. 료칸 예약 전 반드시 확인. 일부 시설은 방수 시트로 가능.</p></div></div>
     </div>
   </div>
-</div>
 
-<footer>
-  🌸 <strong>오사카 2026</strong> · 5월 7–10일 · 대구 ↔ 간사이 · Made with 💙<br>
-  <span style="opacity:0.5;margin-top:0.4rem;display:block;">2026.03.31 기준 · 현지 상황에 따라 변경될 수 있습니다</span>
-</footer>
+  <div class="divider"></div>
 
-<script>
-/* ─────────────────────────────────────────────
-   RESTAURANT DATA
-───────────────────────────────────────────── */
-const ALL_RESTAURANTS = [
-  // YAKINIKU
-  { type:'yaki', emoji:'🥩', name:'야키니쿠 킨타로', jp:'焼肉 金太郎', loc:'난바·신사이바시', price:'1인 3,500–6,000엔', stars:'★★★★★', desc:'오사카 현지인이 즐겨 찾는 성가오리 야키니쿠. 숯불 화로에서 직접 굽는 방식. 호르몬(내장)부터 와규까지 다양한 메뉴. 웨이팅 필수!' },
-  { type:'yaki', emoji:'🔥', name:'마루규', jp:'丸牛 신사이바시점', loc:'신사이바시', price:'1인 4,000–7,000엔', stars:'★★★★★', desc:'A5 와규 전문점. 흑모화우 야키니쿠. 런치 세트가 저녁보다 저렴. 분위기 좋아 커플 데이트 최적. 예약 필수!' },
-  { type:'yaki', emoji:'🍖', name:'야키니쿠 LIKE 우메다점', jp:'焼肉LIKE', loc:'우메다', price:'1인 1,500–2,800엔', stars:'★★★★☆', desc:'1인 야키니쿠 전문 체인. 혼자도 부담 없이 즐길 수 있는 시스템. 가성비 최고. 오사카 관광 중 간단히 해결할 때 추천.' },
-  { type:'yaki', emoji:'🐄', name:'오니쿠야 돈페이', jp:'おにくや どんぺい', loc:'도톤보리', price:'1인 6,000–12,000엔', stars:'★★★★★', desc:'도톤보리 인근 고급 와규 야키니쿠. 소믈리에가 선정한 와인 페어링도 가능. 특별한 저녁 디너에 적합. 창가석 예약 추천.' },
-  { type:'yaki', emoji:'🥢', name:'야키니쿠 타이거', jp:'焼肉タイガー', loc:'우메다·난바 등', price:'1인 3,000–5,000엔', stars:'★★★★☆', desc:'오사카 전역에 체인 있는 야키니쿠. 한국식 스타일에 가까워 익숙하게 즐길 수 있음. 런치 야키니쿠 정식 1,500엔 대박 가성비!' },
+  <!-- HOTELS -->
+  <div class="sec-wrap js-fade" id="hotels">
+    <div class="sec">
+      <div class="sec-head">
+        <div class="sec-label">Accommodation</div>
+        <h2 class="sec-title">🏨 숙소 추천</h2>
+        <div class="sec-bar"></div>
+        <p style="font-size:0.78rem;color:var(--gray);margin-top:0.5rem;">5월 7–9일 (2박) 오사카 시내 숙소 기준 · 2026.03.31 기준</p>
+      </div>
+      <div class="hotel-grid">
+        <div class="hotel-card">
+          <div class="h-tier tier-budget">💚 가성비 추천</div>
+          <div class="h-name">도요코인 신오사카 역앞 본관</div>
+          <div class="h-area">📍 신오사카 · 교통 편리</div>
+          <div class="h-price">1박 7,000–13,000엔 (2인실 기준)</div>
+          <div class="h-desc">일본 대표 비즈니스 호텔. 깨끗하고 교통 편리. 아침 조식 무료 포함. 처음 오사카 여행에 가장 무난한 선택.</div>
+          <div class="h-tags">
+            <span class="h-tag">조식 포함</span><span class="h-tag">신오사카역 도보</span><span class="h-tag">교통 편리</span>
+          </div>
+        </div>
+        <div class="hotel-card">
+          <div class="h-tier tier-mid">💙 중급 추천</div>
+          <div class="h-name">크로스 호텔 오사카</div>
+          <div class="h-area">📍 신사이바시 · 도톤보리 도보권</div>
+          <div class="h-price">1박 15,000–25,000엔 (2인실 기준)</div>
+          <div class="h-desc">세련된 디자인 호텔. 신사이바시·도톤보리 도보 10분. 침대 넓고 인테리어 예쁨. 커플여행 강추!</div>
+          <div class="h-tags">
+            <span class="h-tag">디자인 호텔</span><span class="h-tag">도톤보리 근접</span><span class="h-tag">커플 추천</span>
+          </div>
+        </div>
+        <div class="hotel-card">
+          <div class="h-tier tier-mid">💙 중급 추천</div>
+          <div class="h-name">호텔 몬토레 그라스미어 오사카</div>
+          <div class="h-area">📍 난바 · 도심 최중심</div>
+          <div class="h-price">1박 14,000–22,000엔 (2인실 기준)</div>
+          <div class="h-desc">스코틀랜드 고성풍 유럽 클래식 인테리어. 난바 도보권. 레스토랑 수준 높고 뷰 좋은 객실 보유.</div>
+          <div class="h-tags">
+            <span class="h-tag">클래식 인테리어</span><span class="h-tag">난바 도보</span><span class="h-tag">뷰 좋음</span>
+          </div>
+        </div>
+        <div class="hotel-card">
+          <div class="h-tier tier-mid">💙 중급 추천</div>
+          <div class="h-name">더블트리 by 힐튼 오사카</div>
+          <div class="h-area">📍 우메다 · 나카노시마</div>
+          <div class="h-price">1박 20,000–32,000엔 (2인실 기준)</div>
+          <div class="h-desc">힐튼 중급 브랜드. 도착 시 웰컴 쿠키 유명. 우메다 쇼핑가 인접. 수영장·피트니스 완비.</div>
+          <div class="h-tags">
+            <span class="h-tag">힐튼 브랜드</span><span class="h-tag">우메다 인접</span><span class="h-tag">수영장</span>
+          </div>
+        </div>
+        <div class="hotel-card">
+          <div class="h-tier tier-luxury">💖 고급</div>
+          <div class="h-name">콘래드 오사카</div>
+          <div class="h-area">📍 나카노시마 · 40층 이상 전망</div>
+          <div class="h-price">1박 40,000–90,000엔 (2인실 기준)</div>
+          <div class="h-desc">오사카 최상급 호텔 중 하나. 33–40층에 위치, 시내 파노라마 뷰. 스파·레스토랑 최고 수준. 특별한 날 추천.</div>
+          <div class="h-tags">
+            <span class="h-tag">럭셔리</span><span class="h-tag">파노라마 뷰</span><span class="h-tag">스파 포함</span><span
+              class="h-tag">특별한 날</span>
+          </div>
+        </div>
+        <div class="hotel-card">
+          <div class="h-tier tier-budget">💚 가성비 추천</div>
+          <div class="h-name">오사카 엑셀 호텔 토큐 (난바)</div>
+          <div class="h-area">📍 난바 · 최중심부</div>
+          <div class="h-price">1박 12,000–20,000엔 (2인실 기준)</div>
+          <div class="h-desc">도큐 호텔 체인. 난바역 직결. 깔끔하고 안전. 한국어 가능 직원 상주. 초행 커플에게 무난하고 좋음.</div>
+          <div class="h-tags">
+            <span class="h-tag">역 직결</span><span class="h-tag">한국어 대응</span><span class="h-tag">난바 최중심</span>
+          </div>
+        </div>
+      </div>
+      <div
+        style="margin-top:1.25rem;padding:1rem 1.25rem;background:rgba(96,165,250,0.07);border:1px solid rgba(96,165,250,0.2);border-radius:12px;font-size:0.76rem;color:var(--blue5);">
+        💡 <strong>예약 팁:</strong> 골든위크(4/29–5/5) 직후라 5월 7–10일은 상대적으로 가격 저렴! 하지만 인기 숙소는 일찍 마감되니 2–3개월 전 예약 권장. 자란(じゃらん),
+        부킹닷컴, 아고다, 익스피디아 비교 필수!
+      </div>
+    </div>
+  </div>
 
-  // SUSHI
-  { type:'sushi', emoji:'🍣', name:'하나마루스시 루쿠아점', jp:'はなまるスシ LUCUA店', loc:'우메다·루쿠아', price:'1인 1,800–3,500엔', stars:'★★★★☆', desc:'홋카이도 신선 스시 체인. 회전초밥이지만 품질 우수. 계절 한정 메뉴 다양. 백화점 지하라 접근성 최고. 웨이팅 있지만 가성비 짱!' },
-  { type:'sushi', emoji:'🐟', name:'스시로', jp:'スシロー 난바점', loc:'난바', price:'1인 1,000–2,000엔', stars:'★★★★☆', desc:'일본 1위 회전초밥 체인. 1접시 165–330엔으로 저렴. 앱으로 예약 가능. 맛과 가격 모두 합리적. 관광객도 많이 이용하는 안전한 선택.' },
-  { type:'sushi', emoji:'🦐', name:'쿠라스시', jp:'くら寿司 우메다점', loc:'우메다', price:'1인 1,000–1,800엔', stars:'★★★★☆', desc:'회전초밥 체인 3사 중 하나. 비 게임 기계로 빈 접시 5개 모으면 상품 뽑기 이벤트. 재미있는 경험! 어드벤처 스시 체험.' },
-  { type:'sushi', emoji:'🍱', name:'스시 사이토', jp:'寿司斎藤', loc:'우메다', price:'1인 10,000–25,000엔', stars:'★★★★★', desc:'오마카세 스시 전문점. 신선한 제철 재료로 당일 구성. 주방장이 직접 만들어주는 카운터 스시. 특별한 기념일 디너에 추천. 예약 필수!' },
-  { type:'sushi', emoji:'🌊', name:'이즈미즈시', jp:'和久傳 그랜드 프론트점', loc:'우메다·그랜드프론트', price:'1인 5,000–12,000엔', stars:'★★★★★', desc:'교토 요리 계통의 고급 스시. 계절 식재료를 살린 섬세한 맛. 분위기 고요하고 프라이빗. 그랜드 프론트 오사카 내 위치해 접근 편리.' },
+  <div class="divider"></div>
 
-  // DESSERT
-  { type:'dessert', emoji:'🍰', name:'몬쉐르 도지마롤', jp:'モンシェール 堂島ロール', loc:'우메다·고텐마치', price:'롤케이크 2,600엔~', stars:'★★★★★', desc:'오사카 대표 롤케이크. 부드러운 생크림이 가득. 오전에 팔리면 그날 끝. 반드시 오전 방문 또는 예약 필수. 선물용 최고!' },
-  { type:'dessert', emoji:'🥮', name:'파블로 치즈타르트', jp:'PABLO 난바점', loc:'난바', price:'1개 250–480엔', stars:'★★★★☆', desc:'반숙 치즈타르트로 유명. 겉은 바삭, 속은 촉촉한 반숙 상태. 원조 오사카 디저트! 작은 미니 사이즈도 있어 간식으로 딱.' },
-  { type:'dessert', emoji:'🍡', name:'551봉래 슈마이·아이스', jp:'551蓬莱', loc:'난바·각 지점', price:'슈마이 680엔~, 아이스 150엔', stars:'★★★★★', desc:'오사카 명물 중화만두(슈마이)와 소프트아이스크림. 아이스크림은 1개 150엔으로 저렴하고 맛있음. 공항 면세점에서도 판매하니 마지막 날 쇼핑!' },
-  { type:'dessert', emoji:'🍦', name:'젤라토 피카', jp:'Gelato Pique Café', loc:'신사이바시·우메다', price:'젤라토 600–900엔', stars:'★★★★☆', desc:'일본 감성 젤라토 카페. 계절 한정 맛 다양. 포장 이쁘고 인스타 감성 충만. 봄 한정 딸기·벚꽃 맛 반드시 시도!' },
-  { type:'dessert', emoji:'🍫', name:'히구마 도넛 × 커피 라이츠', jp:'ヒグマドーナツ', loc:'도톤보리', price:'도넛 1개 300–500엔', stars:'★★★★★', desc:'도톤보리 핫플. 매일 아침 만드는 수제 도넛. 글레이즈드·초코·크림 등 10여 종. 오픈런 필수. 커피와 세트가 포토제닉!' },
-  { type:'dessert', emoji:'🧁', name:'파티스리 파리 세베이유', jp:'Paris S\'éveille', loc:'다카이다', price:'케이크 600–1,200엔', stars:'★★★★★', desc:'일본 파티시에 장인의 프랑스과자 전문점. 몽블랑·에클레어·타르트 등 완성도 최상. 미식가 커플에게 강력 추천. 이른 오전 방문 권장.' },
-  { type:'dessert', emoji:'🍧', name:'아이스몬스터 오사카점', jp:'Ice Monster', loc:'신사이바시', price:'빙수 900–1,500엔', stars:'★★★★☆', desc:'대만 유명 빙수 체인의 오사카점. 망고·딸기 빙수 최고. 5월에도 더운 날이면 땡기는 시원한 디저트. 2인이 1개 나눠 먹기 딱!' },
-];
+  <!-- CHECKLIST (IndexedDB) -->
+  <div class="sec-wrap js-fade" id="checklist">
+    <div class="sec">
+      <div class="sec-head">
+        <div class="sec-label">Packing Checklist · IndexedDB 저장</div>
+        <h2 class="sec-title">🎒 준비물 체크리스트</h2>
+        <div class="sec-bar"></div>
+      </div>
+      <div class="cl-progress">
+        <div class="cl-stat">
+          <span>전체 준비 완료율</span>
+          <span id="clPct">0%</span>
+        </div>
+        <div class="cl-bar-wrap">
+          <div class="cl-bar" id="clBar" style="width:0%"></div>
+        </div>
+        <div style="font-size:0.72rem;color:var(--gray2);margin-top:0.4rem;">✅ 체크하면 브라우저에 자동 저장됩니다 (IndexedDB)</div>
+      </div>
+      <div class="cl-grid" id="checklistGrid"></div>
+    </div>
+  </div>
 
-/* ─────────────────────────────────────────────
-   INFINITE SCROLL
-───────────────────────────────────────────── */
-let currentFilter = 'all';
-let displayedCount = 0;
-const PAGE_SIZE = 6;
+  <div class="divider"></div>
 
-function getFiltered() {
-  if (currentFilter === 'all') return ALL_RESTAURANTS;
-  const map = { yaki:'yaki', sushi:'sushi', dessert:'dessert' };
-  return ALL_RESTAURANTS.filter(r => r.type === map[currentFilter]);
-}
+  <!-- EXCHANGE RATE -->
+  <div class="sec-wrap js-fade" id="exchange">
+    <div class="sec">
+      <div class="sec-head">
+        <div class="sec-label">Live Exchange Rate</div>
+        <h2 class="sec-title">💴 실시간 엔화 환율</h2>
+        <div class="sec-bar"></div>
+      </div>
+      <div class="fx-widget">
+        <div class="fx-subtitle">현재 환율 (JPY/KRW)</div>
+        <div class="fx-rate fx-loading" id="fxRate">로딩 중...</div>
+        <div class="fx-unit">1 JPY = <span id="fxKrw">—</span> KRW</div>
+        <div class="fx-conv-grid" id="fxConvGrid">
+          <!-- injected by JS -->
+        </div>
+        <div class="fx-calc">
+          <input type="number" class="fx-input" id="fxInput" placeholder="엔 입력" />
+          <span class="fx-eq">엔</span>
+          <span class="fx-eq">=</span>
+          <span class="fx-result" id="fxOutput">— 원</span>
+        </div>
+        <div class="fx-calc" style="margin-top:0.75rem;">
+          <input type="number" class="fx-input" id="fxInputKrw" placeholder="원 입력" />
+          <span class="fx-eq">원</span>
+          <span class="fx-eq">=</span>
+          <span class="fx-result" id="fxOutputJpy">— 엔</span>
+        </div>
+        <div class="fx-updated" id="fxUpdated">환율 정보 로딩 중...</div>
+      </div>
+    </div>
+  </div>
 
-function renderCards(items, append = true) {
-  const grid = document.getElementById('restGrid');
-  if (!append) { grid.innerHTML = ''; }
-  items.forEach((r, i) => {
-    const d = document.createElement('div');
-    d.className = 'rest-card';
-    d.style.animationDelay = (i * 0.06) + 's';
-    const typeLabel = r.type === 'yaki' ? '야끼니꾸' : r.type === 'sushi' ? '스시' : '디저트';
-    const typeClass = r.type === 'yaki' ? 't-yaki' : r.type === 'sushi' ? 't-sushi' : 't-dessert';
-    d.innerHTML = `
+  <div class="divider"></div>
+
+  <!-- TIPS -->
+  <div class="sec-wrap js-fade" id="tips">
+    <div class="sec">
+      <div class="sec-head">
+        <div class="sec-label">Travel Tips</div>
+        <h2 class="sec-title">💡 오사카 여행 꿀팁</h2>
+        <div class="sec-bar"></div>
+      </div>
+      <div class="tip-grid">
+        <div class="tip-card">
+          <div class="tip-ico">🗺</div>
+          <div class="tip-body">
+            <h4>오프라인 지도 필수</h4>
+            <p>Google Maps를 미리 오프라인 저장해두세요. 데이터 로밍 없어도 길 찾기 가능!</p>
+          </div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-ico">📱</div>
+          <div class="tip-body">
+            <h4>데이터 유심/포켓와이파이</h4>
+            <p>공항에서 미리 유심 또는 포켓와이파이 수령. 한국 출발 전 온라인 예약 시 더 저렴!</p>
+          </div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-ico">🏪</div>
+          <div class="tip-body">
+            <h4>편의점 활용 극대화</h4>
+            <p>세븐일레븐·패밀리마트·로손에서 아침 해결 가능. ATM에서 엔화 인출도 OK (7-Eleven 추천)</p>
+          </div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-ico">🛍</div>
+          <div class="tip-body">
+            <h4>면세 쇼핑 (Tax Free)</h4>
+            <p>1일 5,000엔 이상 구매 시 소비세(10%) 면세. 여권 지참 필수. 드럭스토어 면세 가능!</p>
+          </div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-ico">💊</div>
+          <div class="tip-body">
+            <h4>마츠모토키요시 쇼핑</h4>
+            <p>드럭스토어 왕. 화장품·의약품·과자 저렴. 하나마스크·로이히 파스·용각산 꼭 구매!</p>
+          </div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-ico">🌸</div>
+          <div class="tip-body">
+            <h4>5월 오사카 날씨</h4>
+            <p>평균 18–25°C. 낮엔 티셔츠, 저녁엔 얇은 겉옷 필요. 일교차 있으니 레이어링 준비!</p>
+          </div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-ico">🍜</div>
+          <div class="tip-body">
+            <h4>오사카 3대 먹거리</h4>
+            <p>타코야키(文의 타코야키 본점), 오코노미야키(보테쥬), 쿠시카츠(루나 본점). 줄 서도 가야 해!</p>
+          </div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-ico">🚶</div>
+          <div class="tip-body">
+            <h4>도톤보리 걸어서 탐방</h4>
+            <p>글리코상 → 히구마 도넛 → 쿠레프 → 킨류 라멘 순으로 도보 탐방. 1–2시간 소요.</p>
+          </div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-ico">🌃</div>
+          <div class="tip-body">
+            <h4>야경 명소</h4>
+            <p>우메다 스카이빌딩 공중정원(1,500엔), 아베노하루카스 전망대, 도톤보리 야간 유람선!</p>
+          </div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-ico">💴</div>
+          <div class="tip-body">
+            <h4>현금 vs 카드</h4>
+            <p>일본은 현금 문화 강함. 작은 식당은 현금만 받는 경우 多. 엔화 현금 최소 50,000엔 준비 권장.</p>
+          </div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-ico">🗑</div>
+          <div class="tip-body">
+            <h4>쓰레기통이 없다!</h4>
+            <p>일본은 거리에 쓰레기통 거의 없음. 편의점에서 산 것은 편의점 쓰레기통 이용. 조그만 봉지 챙기기!</p>
+          </div>
+        </div>
+        <div class="tip-card">
+          <div class="tip-ico">🎎</div>
+          <div class="tip-body">
+            <h4>에스컬레이터 규칙</h4>
+            <p>오사카에서는 에스컬레이터 오른쪽 서기! (도쿄는 왼쪽) 왼쪽은 빠르게 걷는 사람을 위해 비우기.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- WARNINGS -->
+  <div class="sec-wrap js-fade" id="warnings">
+    <div class="sec">
+      <div class="sec-head">
+        <div class="sec-label">Precautions</div>
+        <h2 class="sec-title">⚠️ 주의사항</h2>
+        <div class="sec-bar"></div>
+      </div>
+      <div class="warn-grid">
+        <div class="warn-card">
+          <div class="warn-ico">⏰</div>
+          <div class="warn-body">
+            <h4>귀국편 시간 엄수!</h4>
+            <p>TW312 10:40 출발. 최소 8:40까지 공항 도착. 아리마 온천에서 07:00 출발 필요. 절대 늦으면 안 됨!</p>
+          </div>
+        </div>
+        <div class="warn-card">
+          <div class="warn-ico">🛂</div>
+          <div class="warn-body">
+            <h4>입국신고서 작성</h4>
+            <p>일본 입국 시 Visit Japan Web 미리 등록하면 QR코드로 빠른 입국 가능. 출발 전 반드시 등록!</p>
+          </div>
+        </div>
+        <div class="warn-card">
+          <div class="warn-ico">💳</div>
+          <div class="warn-body">
+            <h4>여행자 보험 가입</h4>
+            <p>해외여행 중 의료비는 매우 비쌈. 출발 전 카드사 여행자보험 또는 별도 보험 가입 필수!</p>
+          </div>
+        </div>
+        <div class="warn-card">
+          <div class="warn-ico">🌀</div>
+          <div class="warn-body">
+            <h4>지진 대비</h4>
+            <p>일본은 지진 다발 지역. 호텔 체크인 시 비상구 확인. 지진 발생 시 책상 아래 대피, 엘리베이터 금지.</p>
+          </div>
+        </div>
+        <div class="warn-card">
+          <div class="warn-ico">🍺</div>
+          <div class="warn-body">
+            <h4>공공장소 음주</h4>
+            <p>일본은 공원 등에서 공개 음주 허용되나 민폐 행위 금지. 큰 소리, 늦은 밤 시끄럽게 하지 않기.</p>
+          </div>
+        </div>
+        <div class="warn-card">
+          <div class="warn-ico">📷</div>
+          <div class="warn-body">
+            <h4>사진 촬영 주의</h4>
+            <p>사원·신사 내부, 사람 얼굴, 가게 내부 촬영 전 허가 확인. 특히 게이샤·마이코 무단 촬영 절대 금지!</p>
+          </div>
+        </div>
+        <div class="warn-card">
+          <div class="warn-ico">🚭</div>
+          <div class="warn-body">
+            <h4>흡연 구역 엄수</h4>
+            <p>오사카 시내 거리 흡연 금지 구역 多. 지정 흡연소에서만 흡연. 위반 시 벌금 부과될 수 있음.</p>
+          </div>
+        </div>
+        <div class="warn-card">
+          <div class="warn-ico">♨</div>
+          <div class="warn-body">
+            <h4>온천 문신 제한</h4>
+            <p>문신(타투) 있으면 대부분 온천 입욕 불가. 료칸 예약 전 반드시 확인. 일부 시설은 방수 시트로 가능.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    🌸 <strong>오사카 2026</strong> · 5월 7–10일 · 대구 ↔ 간사이 · Made with 💙<br>
+    <span style="opacity:0.5;margin-top:0.4rem;display:block;">2026.03.31 기준 · 현지 상황에 따라 변경될 수 있습니다</span>
+  </footer>
+
+  <script>
+    /* ─────────────────────────────────────────────
+       RESTAURANT DATA
+    ───────────────────────────────────────────── */
+    const ALL_RESTAURANTS = [
+      // YAKINIKU
+      { type: 'yaki', emoji: '🥩', name: '야키니쿠 킨타로', jp: '焼肉 金太郎', loc: '난바·신사이바시', price: '1인 3,500–6,000엔', stars: '★★★★★', desc: '오사카 현지인이 즐겨 찾는 성가오리 야키니쿠. 숯불 화로에서 직접 굽는 방식. 호르몬(내장)부터 와규까지 다양한 메뉴. 웨이팅 필수!' },
+      { type: 'yaki', emoji: '🔥', name: '마루규', jp: '丸牛 신사이바시점', loc: '신사이바시', price: '1인 4,000–7,000엔', stars: '★★★★★', desc: 'A5 와규 전문점. 흑모화우 야키니쿠. 런치 세트가 저녁보다 저렴. 분위기 좋아 커플 데이트 최적. 예약 필수!' },
+      { type: 'yaki', emoji: '🍖', name: '야키니쿠 LIKE 우메다점', jp: '焼肉LIKE', loc: '우메다', price: '1인 1,500–2,800엔', stars: '★★★★☆', desc: '1인 야키니쿠 전문 체인. 혼자도 부담 없이 즐길 수 있는 시스템. 가성비 최고. 오사카 관광 중 간단히 해결할 때 추천.' },
+      { type: 'yaki', emoji: '🐄', name: '오니쿠야 돈페이', jp: 'おにくや どんぺい', loc: '도톤보리', price: '1인 6,000–12,000엔', stars: '★★★★★', desc: '도톤보리 인근 고급 와규 야키니쿠. 소믈리에가 선정한 와인 페어링도 가능. 특별한 저녁 디너에 적합. 창가석 예약 추천.' },
+      { type: 'yaki', emoji: '🥢', name: '야키니쿠 타이거', jp: '焼肉タイガー', loc: '우메다·난바 등', price: '1인 3,000–5,000엔', stars: '★★★★☆', desc: '오사카 전역에 체인 있는 야키니쿠. 한국식 스타일에 가까워 익숙하게 즐길 수 있음. 런치 야키니쿠 정식 1,500엔 대박 가성비!' },
+
+      // SUSHI
+      { type: 'sushi', emoji: '🍣', name: '하나마루스시 루쿠아점', jp: 'はなまるスシ LUCUA店', loc: '우메다·루쿠아', price: '1인 1,800–3,500엔', stars: '★★★★☆', desc: '홋카이도 신선 스시 체인. 회전초밥이지만 품질 우수. 계절 한정 메뉴 다양. 백화점 지하라 접근성 최고. 웨이팅 있지만 가성비 짱!' },
+      { type: 'sushi', emoji: '🐟', name: '스시로', jp: 'スシロー 난바점', loc: '난바', price: '1인 1,000–2,000엔', stars: '★★★★☆', desc: '일본 1위 회전초밥 체인. 1접시 165–330엔으로 저렴. 앱으로 예약 가능. 맛과 가격 모두 합리적. 관광객도 많이 이용하는 안전한 선택.' },
+      { type: 'sushi', emoji: '🦐', name: '쿠라스시', jp: 'くら寿司 우메다점', loc: '우메다', price: '1인 1,000–1,800엔', stars: '★★★★☆', desc: '회전초밥 체인 3사 중 하나. 비 게임 기계로 빈 접시 5개 모으면 상품 뽑기 이벤트. 재미있는 경험! 어드벤처 스시 체험.' },
+      { type: 'sushi', emoji: '🍱', name: '스시 사이토', jp: '寿司斎藤', loc: '우메다', price: '1인 10,000–25,000엔', stars: '★★★★★', desc: '오마카세 스시 전문점. 신선한 제철 재료로 당일 구성. 주방장이 직접 만들어주는 카운터 스시. 특별한 기념일 디너에 추천. 예약 필수!' },
+      { type: 'sushi', emoji: '🌊', name: '이즈미즈시', jp: '和久傳 그랜드 프론트점', loc: '우메다·그랜드프론트', price: '1인 5,000–12,000엔', stars: '★★★★★', desc: '교토 요리 계통의 고급 스시. 계절 식재료를 살린 섬세한 맛. 분위기 고요하고 프라이빗. 그랜드 프론트 오사카 내 위치해 접근 편리.' },
+
+      // DESSERT
+      { type: 'dessert', emoji: '🍰', name: '몬쉐르 도지마롤', jp: 'モンシェール 堂島ロール', loc: '우메다·고텐마치', price: '롤케이크 2,600엔~', stars: '★★★★★', desc: '오사카 대표 롤케이크. 부드러운 생크림이 가득. 오전에 팔리면 그날 끝. 반드시 오전 방문 또는 예약 필수. 선물용 최고!' },
+      { type: 'dessert', emoji: '🥮', name: '파블로 치즈타르트', jp: 'PABLO 난바점', loc: '난바', price: '1개 250–480엔', stars: '★★★★☆', desc: '반숙 치즈타르트로 유명. 겉은 바삭, 속은 촉촉한 반숙 상태. 원조 오사카 디저트! 작은 미니 사이즈도 있어 간식으로 딱.' },
+      { type: 'dessert', emoji: '🍡', name: '551봉래 슈마이·아이스', jp: '551蓬莱', loc: '난바·각 지점', price: '슈마이 680엔~, 아이스 150엔', stars: '★★★★★', desc: '오사카 명물 중화만두(슈마이)와 소프트아이스크림. 아이스크림은 1개 150엔으로 저렴하고 맛있음. 공항 면세점에서도 판매하니 마지막 날 쇼핑!' },
+      { type: 'dessert', emoji: '🍦', name: '젤라토 피카', jp: 'Gelato Pique Café', loc: '신사이바시·우메다', price: '젤라토 600–900엔', stars: '★★★★☆', desc: '일본 감성 젤라토 카페. 계절 한정 맛 다양. 포장 이쁘고 인스타 감성 충만. 봄 한정 딸기·벚꽃 맛 반드시 시도!' },
+      { type: 'dessert', emoji: '🍫', name: '히구마 도넛 × 커피 라이츠', jp: 'ヒグマドーナツ', loc: '도톤보리', price: '도넛 1개 300–500엔', stars: '★★★★★', desc: '도톤보리 핫플. 매일 아침 만드는 수제 도넛. 글레이즈드·초코·크림 등 10여 종. 오픈런 필수. 커피와 세트가 포토제닉!' },
+      { type: 'dessert', emoji: '🧁', name: '파티스리 파리 세베이유', jp: 'Paris S\'éveille', loc: '다카이다', price: '케이크 600–1,200엔', stars: '★★★★★', desc: '일본 파티시에 장인의 프랑스과자 전문점. 몽블랑·에클레어·타르트 등 완성도 최상. 미식가 커플에게 강력 추천. 이른 오전 방문 권장.' },
+      { type: 'dessert', emoji: '🍧', name: '아이스몬스터 오사카점', jp: 'Ice Monster', loc: '신사이바시', price: '빙수 900–1,500엔', stars: '★★★★☆', desc: '대만 유명 빙수 체인의 오사카점. 망고·딸기 빙수 최고. 5월에도 더운 날이면 땡기는 시원한 디저트. 2인이 1개 나눠 먹기 딱!' },
+    ];
+
+    /* ─────────────────────────────────────────────
+       INFINITE SCROLL
+    ───────────────────────────────────────────── */
+    let currentFilter = 'all';
+    let displayedCount = 0;
+    const PAGE_SIZE = 6;
+
+    function getFiltered() {
+      if (currentFilter === 'all') return ALL_RESTAURANTS;
+      const map = { yaki: 'yaki', sushi: 'sushi', dessert: 'dessert' };
+      return ALL_RESTAURANTS.filter(r => r.type === map[currentFilter]);
+    }
+
+    function renderCards(items, append = true) {
+      const grid = document.getElementById('restGrid');
+      if (!append) { grid.innerHTML = ''; }
+      items.forEach((r, i) => {
+        const d = document.createElement('div');
+        d.className = 'rest-card';
+        d.style.animationDelay = (i * 0.06) + 's';
+        const typeLabel = r.type === 'yaki' ? '야끼니꾸' : r.type === 'sushi' ? '스시' : '디저트';
+        const typeClass = r.type === 'yaki' ? 't-yaki' : r.type === 'sushi' ? 't-sushi' : 't-dessert';
+        d.innerHTML = `
       <div class="rest-thumb">${r.emoji}</div>
       <div class="rest-body">
         <div class="rest-type ${typeClass}">${typeLabel}</div>
@@ -1220,298 +2221,311 @@ function renderCards(items, append = true) {
         <div class="rest-price">💴 ${r.price}</div>
         <div class="rest-desc">${r.desc}</div>
       </div>`;
-    grid.appendChild(d);
-  });
-}
-
-function loadMore() {
-  const filtered = getFiltered();
-  const slice = filtered.slice(displayedCount, displayedCount + PAGE_SIZE);
-  if (slice.length === 0) {
-    document.getElementById('restStatus').textContent = '모든 맛집을 불러왔습니다 🎉';
-    document.getElementById('restSpinner').style.display = 'none';
-    return;
-  }
-  document.getElementById('restSpinner').style.display = 'block';
-  document.getElementById('restStatus').textContent = '';
-  setTimeout(() => {
-    renderCards(slice, displayedCount > 0);
-    displayedCount += slice.length;
-    document.getElementById('restSpinner').style.display = 'none';
-    if (displayedCount >= filtered.length) {
-      document.getElementById('restStatus').textContent = '모든 맛집을 불러왔습니다 🎉';
+        grid.appendChild(d);
+      });
     }
-  }, 350);
-}
 
-function resetAndLoad() {
-  displayedCount = 0;
-  document.getElementById('restGrid').innerHTML = '';
-  document.getElementById('restStatus').textContent = '';
-  loadMore();
-}
+    function loadMore() {
+      const filtered = getFiltered();
+      const slice = filtered.slice(displayedCount, displayedCount + PAGE_SIZE);
+      if (slice.length === 0) {
+        document.getElementById('restStatus').textContent = '모든 맛집을 불러왔습니다 🎉';
+        document.getElementById('restSpinner').style.display = 'none';
+        return;
+      }
+      document.getElementById('restSpinner').style.display = 'block';
+      document.getElementById('restStatus').textContent = '';
+      setTimeout(() => {
+        renderCards(slice, displayedCount > 0);
+        displayedCount += slice.length;
+        document.getElementById('restSpinner').style.display = 'none';
+        if (displayedCount >= filtered.length) {
+          document.getElementById('restStatus').textContent = '모든 맛집을 불러왔습니다 🎉';
+        }
+      }, 350);
+    }
 
-// Filter tabs
-document.querySelectorAll('.ftab').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.ftab').forEach(b => b.classList.remove('on'));
-    btn.classList.add('on');
-    currentFilter = btn.dataset.filter;
+    function resetAndLoad() {
+      displayedCount = 0;
+      document.getElementById('restGrid').innerHTML = '';
+      document.getElementById('restStatus').textContent = '';
+      loadMore();
+    }
+
+    // Filter tabs
+    document.querySelectorAll('.ftab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.ftab').forEach(b => b.classList.remove('on'));
+        btn.classList.add('on');
+        currentFilter = btn.dataset.filter;
+        resetAndLoad();
+      });
+    });
+
+    // Intersection Observer for infinite scroll
+    const sentinel = document.getElementById('restSentinel');
+    const restObserver = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) {
+        const filtered = getFiltered();
+        if (displayedCount < filtered.length) loadMore();
+      }
+    }, { rootMargin: '200px' });
+    restObserver.observe(sentinel);
+
     resetAndLoad();
-  });
-});
 
-// Intersection Observer for infinite scroll
-const sentinel = document.getElementById('restSentinel');
-const restObserver = new IntersectionObserver(entries => {
-  if (entries[0].isIntersecting) {
-    const filtered = getFiltered();
-    if (displayedCount < filtered.length) loadMore();
-  }
-}, { rootMargin: '200px' });
-restObserver.observe(sentinel);
+    /* ─────────────────────────────────────────────
+       CHECKLIST (IndexedDB)
+    ───────────────────────────────────────────── */
+    const CL_ITEMS = [
+      {
+        cat: '📄 필수 서류', items: [
+          { id: 'passport', label: '여권 (유효기간 6개월 이상)', important: true },
+          { id: 'ticket', label: '항공권 e-티켓 (출력 or 스크린샷)', important: true },
+          { id: 'hotel', label: '호텔 예약 확인서', important: true },
+          { id: 'vjw', label: 'Visit Japan Web QR코드 등록', important: true },
+          { id: 'insurance', label: '여행자보험 증권' },
+        ]
+      },
+      {
+        cat: '💴 금전/카드', items: [
+          { id: 'yen_cash', label: '엔화 현금 (최소 50,000엔 권장)', important: true },
+          { id: 'creditcard', label: '해외 결제 가능 신용카드', important: true },
+          { id: 'icoca_plan', label: '이코카 카드 구매 계획 (공항 도착 후)' },
+          { id: 'travel_wallet', label: '트래블월렛 or 트래블로그 카드' },
+        ]
+      },
+      {
+        cat: '📱 전자기기', items: [
+          { id: 'phone', label: '스마트폰 + 충전기' },
+          { id: 'sim', label: '해외 유심 또는 포켓와이파이 준비' },
+          { id: 'adapter', label: '일본용 어댑터 (A타입, 보통 한국 그대로 가능)' },
+          { id: 'powerbank', label: '보조배터리 (기내 반입용, 20,000mAh 이하)' },
+          { id: 'camera', label: '카메라 or 충전식 필름카메라' },
+          { id: 'earphone', label: '이어폰' },
+        ]
+      },
+      {
+        cat: '👗 의류/위생', items: [
+          { id: 'clothes', label: '옷 (3박 기준 + 예비 1벌)' },
+          { id: 'shoes', label: '편한 신발 (많이 걷기 때문!)' },
+          { id: 'jacket', label: '얇은 겉옷 (5월 저녁 선선)' },
+          { id: 'umbrella', label: '접이식 우산 or 우비' },
+          { id: 'toiletries', label: '세면도구 (칫솔·치약·면도기)' },
+          { id: 'sunscreen', label: '선크림 SPF50+' },
+          { id: 'yukata_ok', label: '료칸 유카타 착용 준비 👘' },
+        ]
+      },
+      {
+        cat: '💊 상비약', items: [
+          { id: 'cold', label: '감기약·해열제' },
+          { id: 'digest', label: '소화제·정로환' },
+          { id: 'painkiller', label: '진통제 (이부프로펜 등)' },
+          { id: 'bandaid', label: '밴드·상처 연고' },
+          { id: 'motion', label: '멀미약 (배·버스 이용 시)' },
+        ]
+      },
+      {
+        cat: '🎒 기타', items: [
+          { id: 'bag_small', label: '작은 데이백 or 슬링백' },
+          { id: 'snack', label: '비행기 간식' },
+          { id: 'offlinemap', label: 'Google Maps 오프라인 저장 완료' },
+          { id: 'translation', label: '파파고 or 구글번역 앱 설치' },
+          { id: 'emergency', label: '비상연락처 메모 (한국 대사관·호텔)' },
+        ]
+      },
+    ];
 
-resetAndLoad();
+    let db;
+    const DB_NAME = 'OsakaTrip2026';
+    const STORE_NAME = 'checklist';
 
-/* ─────────────────────────────────────────────
-   CHECKLIST (IndexedDB)
-───────────────────────────────────────────── */
-const CL_ITEMS = [
-  { cat:'📄 필수 서류', items:[
-    { id:'passport', label:'여권 (유효기간 6개월 이상)', important:true },
-    { id:'ticket', label:'항공권 e-티켓 (출력 or 스크린샷)', important:true },
-    { id:'hotel', label:'호텔 예약 확인서', important:true },
-    { id:'vjw', label:'Visit Japan Web QR코드 등록', important:true },
-    { id:'insurance', label:'여행자보험 증권' },
-  ]},
-  { cat:'💴 금전/카드', items:[
-    { id:'yen_cash', label:'엔화 현금 (최소 50,000엔 권장)', important:true },
-    { id:'creditcard', label:'해외 결제 가능 신용카드', important:true },
-    { id:'icoca_plan', label:'이코카 카드 구매 계획 (공항 도착 후)' },
-    { id:'travel_wallet', label:'트래블월렛 or 트래블로그 카드' },
-  ]},
-  { cat:'📱 전자기기', items:[
-    { id:'phone', label:'스마트폰 + 충전기' },
-    { id:'sim', label:'해외 유심 또는 포켓와이파이 준비' },
-    { id:'adapter', label:'일본용 어댑터 (A타입, 보통 한국 그대로 가능)' },
-    { id:'powerbank', label:'보조배터리 (기내 반입용, 20,000mAh 이하)' },
-    { id:'camera', label:'카메라 or 충전식 필름카메라' },
-    { id:'earphone', label:'이어폰' },
-  ]},
-  { cat:'👗 의류/위생', items:[
-    { id:'clothes', label:'옷 (3박 기준 + 예비 1벌)' },
-    { id:'shoes', label:'편한 신발 (많이 걷기 때문!)' },
-    { id:'jacket', label:'얇은 겉옷 (5월 저녁 선선)' },
-    { id:'umbrella', label:'접이식 우산 or 우비' },
-    { id:'toiletries', label:'세면도구 (칫솔·치약·면도기)' },
-    { id:'sunscreen', label:'선크림 SPF50+' },
-    { id:'yukata_ok', label:'료칸 유카타 착용 준비 👘' },
-  ]},
-  { cat:'💊 상비약', items:[
-    { id:'cold', label:'감기약·해열제' },
-    { id:'digest', label:'소화제·정로환' },
-    { id:'painkiller', label:'진통제 (이부프로펜 등)' },
-    { id:'bandaid', label:'밴드·상처 연고' },
-    { id:'motion', label:'멀미약 (배·버스 이용 시)' },
-  ]},
-  { cat:'🎒 기타', items:[
-    { id:'bag_small', label:'작은 데이백 or 슬링백' },
-    { id:'snack', label:'비행기 간식' },
-    { id:'offlinemap', label:'Google Maps 오프라인 저장 완료' },
-    { id:'translation', label:'파파고 or 구글번역 앱 설치' },
-    { id:'emergency', label:'비상연락처 메모 (한국 대사관·호텔)' },
-  ]},
-];
+    function openDB() {
+      return new Promise((res, rej) => {
+        const req = indexedDB.open(DB_NAME, 1);
+        req.onupgradeneeded = e => {
+          e.target.result.createObjectStore(STORE_NAME, { keyPath: 'id' });
+        };
+        req.onsuccess = e => res(e.target.result);
+        req.onerror = e => rej(e);
+      });
+    }
+    async function getChecked(id) {
+      const tx = db.transaction(STORE_NAME, 'readonly');
+      return new Promise(res => {
+        const req = tx.objectStore(STORE_NAME).get(id);
+        req.onsuccess = e => res(!!(e.target.result && e.target.result.checked));
+      });
+    }
+    async function setChecked(id, checked) {
+      const tx = db.transaction(STORE_NAME, 'readwrite');
+      tx.objectStore(STORE_NAME).put({ id, checked });
+    }
+    async function getAllChecked() {
+      const tx = db.transaction(STORE_NAME, 'readonly');
+      return new Promise(res => {
+        const req = tx.objectStore(STORE_NAME).getAll();
+        req.onsuccess = e => {
+          const map = {};
+          e.target.result.forEach(r => { if (r.checked) map[r.id] = true; });
+          res(map);
+        };
+      });
+    }
 
-let db;
-const DB_NAME = 'OsakaTrip2026';
-const STORE_NAME = 'checklist';
-
-function openDB() {
-  return new Promise((res, rej) => {
-    const req = indexedDB.open(DB_NAME, 1);
-    req.onupgradeneeded = e => {
-      e.target.result.createObjectStore(STORE_NAME, { keyPath: 'id' });
-    };
-    req.onsuccess = e => res(e.target.result);
-    req.onerror = e => rej(e);
-  });
-}
-async function getChecked(id) {
-  const tx = db.transaction(STORE_NAME, 'readonly');
-  return new Promise(res => {
-    const req = tx.objectStore(STORE_NAME).get(id);
-    req.onsuccess = e => res(!!(e.target.result && e.target.result.checked));
-  });
-}
-async function setChecked(id, checked) {
-  const tx = db.transaction(STORE_NAME, 'readwrite');
-  tx.objectStore(STORE_NAME).put({ id, checked });
-}
-async function getAllChecked() {
-  const tx = db.transaction(STORE_NAME, 'readonly');
-  return new Promise(res => {
-    const req = tx.objectStore(STORE_NAME).getAll();
-    req.onsuccess = e => {
-      const map = {};
-      e.target.result.forEach(r => { if (r.checked) map[r.id] = true; });
-      res(map);
-    };
-  });
-}
-
-async function buildChecklist() {
-  db = await openDB();
-  const checked = await getAllChecked();
-  const grid = document.getElementById('checklistGrid');
-  grid.innerHTML = '';
-  CL_ITEMS.forEach(cat => {
-    const catDiv = document.createElement('div');
-    catDiv.className = 'cl-cat';
-    catDiv.innerHTML = `<div class="cl-cat-title">${cat.cat}</div>`;
-    cat.items.forEach(item => {
-      const div = document.createElement('div');
-      div.className = 'cl-item' + (checked[item.id] ? ' done' : '');
-      div.innerHTML = `
+    async function buildChecklist() {
+      db = await openDB();
+      const checked = await getAllChecked();
+      const grid = document.getElementById('checklistGrid');
+      grid.innerHTML = '';
+      CL_ITEMS.forEach(cat => {
+        const catDiv = document.createElement('div');
+        catDiv.className = 'cl-cat';
+        catDiv.innerHTML = `<div class="cl-cat-title">${cat.cat}</div>`;
+        cat.items.forEach(item => {
+          const div = document.createElement('div');
+          div.className = 'cl-item' + (checked[item.id] ? ' done' : '');
+          div.innerHTML = `
         <label>
           <input type="checkbox" class="cl-cb" id="cb_${item.id}" ${checked[item.id] ? 'checked' : ''} />
           <span class="cl-text">${item.label}</span>
           ${item.important ? '<span class="cl-important">MUST</span>' : ''}
         </label>`;
-      div.querySelector('input').addEventListener('change', async e => {
-        await setChecked(item.id, e.target.checked);
-        div.classList.toggle('done', e.target.checked);
-        updateProgress();
+          div.querySelector('input').addEventListener('change', async e => {
+            await setChecked(item.id, e.target.checked);
+            div.classList.toggle('done', e.target.checked);
+            updateProgress();
+          });
+          catDiv.appendChild(div);
+        });
+        grid.appendChild(catDiv);
       });
-      catDiv.appendChild(div);
+      updateProgress();
+    }
+
+    function updateProgress() {
+      const total = document.querySelectorAll('.cl-cb').length;
+      const done = document.querySelectorAll('.cl-cb:checked').length;
+      const pct = total ? Math.round(done / total * 100) : 0;
+      document.getElementById('clPct').textContent = pct + '%';
+      document.getElementById('clBar').style.width = pct + '%';
+    }
+
+    buildChecklist();
+
+    /* ─────────────────────────────────────────────
+       EXCHANGE RATE
+    ───────────────────────────────────────────── */
+    let fxRate = null; // 1 JPY = X KRW
+
+    async function fetchRate() {
+      try {
+        const res = await fetch('https://api.exchangerate-api.com/v4/latest/JPY');
+        const data = await res.json();
+        fxRate = data.rates.KRW;
+        renderRate(fxRate, data.date);
+      } catch (e) {
+        // fallback: use a recent approximate rate
+        fxRate = 9.3;
+        renderRate(fxRate, null, true);
+      }
+    }
+
+    function renderRate(rate, date, fallback = false) {
+      const el = document.getElementById('fxRate');
+      el.textContent = rate.toFixed(2);
+      el.classList.remove('fx-loading');
+      document.getElementById('fxKrw').textContent = rate.toFixed(2);
+      document.getElementById('fxUpdated').textContent = fallback
+        ? '⚠️ 네트워크 오류 - 참고용 환율 표시 중 (약 9.3원/엔)'
+        : `마지막 업데이트: ${date} (ExchangeRate-API)`;
+
+      const convAmounts = [500, 1000, 3000, 5000, 10000, 30000, 50000];
+      const grid = document.getElementById('fxConvGrid');
+      grid.innerHTML = '';
+      convAmounts.forEach(jpy => {
+        const krw = Math.round(jpy * rate);
+        const div = document.createElement('div');
+        div.className = 'fx-conv';
+        div.innerHTML = `<div class="fx-conv-jpy">${jpy.toLocaleString()}엔</div><div class="fx-conv-krw">≈ ${krw.toLocaleString()}원</div>`;
+        grid.appendChild(div);
+      });
+
+      // calculator
+      document.getElementById('fxInput').addEventListener('input', e => {
+        const v = parseFloat(e.target.value);
+        document.getElementById('fxOutput').textContent = isNaN(v) ? '— 원' : Math.round(v * rate).toLocaleString() + ' 원';
+      });
+      document.getElementById('fxInputKrw').addEventListener('input', e => {
+        const v = parseFloat(e.target.value);
+        document.getElementById('fxOutputJpy').textContent = isNaN(v) ? '— 엔' : Math.round(v / rate).toLocaleString() + ' 엔';
+      });
+    }
+
+    fetchRate();
+
+    /* ─────────────────────────────────────────────
+       NAV ACTIVE STATE (scroll spy)
+    ───────────────────────────────────────────── */
+    function navTo(selector) {
+      const el = document.querySelector(selector);
+      if (!el) return;
+      // Reveal all fade sections up to and including the target immediately
+      const allFade = Array.from(document.querySelectorAll('.js-fade'));
+      const targetIdx = allFade.indexOf(el.closest('.js-fade') || el);
+      allFade.forEach((s, i) => { if (i <= targetIdx) s.classList.add('visible'); });
+      const navH = document.querySelector('.nav').offsetHeight;
+      const top = el.getBoundingClientRect().top + window.scrollY - navH;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+
+    const sections = ['#hero', '#flight', '#itinerary', '#transport', '#restaurants', '#onsen', '#hotels', '#checklist', '#exchange', '#tips', '#warnings'];
+    const navBtns = Array.from(document.querySelectorAll('.nb'));
+
+    const spyObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = '#' + entry.target.id;
+          const idx = sections.indexOf(id);
+          navBtns.forEach((b, i) => b.classList.toggle('on', i === idx));
+        }
+      });
+    }, { rootMargin: '-40% 0px -40% 0px' });
+
+    sections.forEach(s => {
+      const el = document.querySelector(s);
+      if (el) spyObserver.observe(el);
     });
-    grid.appendChild(catDiv);
-  });
-  updateProgress();
-}
 
-function updateProgress() {
-  const total = document.querySelectorAll('.cl-cb').length;
-  const done = document.querySelectorAll('.cl-cb:checked').length;
-  const pct = total ? Math.round(done / total * 100) : 0;
-  document.getElementById('clPct').textContent = pct + '%';
-  document.getElementById('clBar').style.width = pct + '%';
-}
+    /* ─────────────────────────────────────────────
+       FADE-IN ANIMATIONS (scroll trigger)
+    ───────────────────────────────────────────── */
+    const fadeObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          fadeObserver.unobserve(e.target);
+        }
+      });
+    }, { rootMargin: '-60px' });
 
-buildChecklist();
+    document.querySelectorAll('.js-fade').forEach(el => fadeObserver.observe(el));
 
-/* ─────────────────────────────────────────────
-   EXCHANGE RATE
-───────────────────────────────────────────── */
-let fxRate = null; // 1 JPY = X KRW
-
-async function fetchRate() {
-  try {
-    const res = await fetch('https://api.exchangerate-api.com/v4/latest/JPY');
-    const data = await res.json();
-    fxRate = data.rates.KRW;
-    renderRate(fxRate, data.date);
-  } catch(e) {
-    // fallback: use a recent approximate rate
-    fxRate = 9.3;
-    renderRate(fxRate, null, true);
-  }
-}
-
-function renderRate(rate, date, fallback = false) {
-  const el = document.getElementById('fxRate');
-  el.textContent = rate.toFixed(2);
-  el.classList.remove('fx-loading');
-  document.getElementById('fxKrw').textContent = rate.toFixed(2);
-  document.getElementById('fxUpdated').textContent = fallback
-    ? '⚠️ 네트워크 오류 - 참고용 환율 표시 중 (약 9.3원/엔)'
-    : `마지막 업데이트: ${date} (ExchangeRate-API)`;
-
-  const convAmounts = [500, 1000, 3000, 5000, 10000, 30000, 50000];
-  const grid = document.getElementById('fxConvGrid');
-  grid.innerHTML = '';
-  convAmounts.forEach(jpy => {
-    const krw = Math.round(jpy * rate);
-    const div = document.createElement('div');
-    div.className = 'fx-conv';
-    div.innerHTML = `<div class="fx-conv-jpy">${jpy.toLocaleString()}엔</div><div class="fx-conv-krw">≈ ${krw.toLocaleString()}원</div>`;
-    grid.appendChild(div);
-  });
-
-  // calculator
-  document.getElementById('fxInput').addEventListener('input', e => {
-    const v = parseFloat(e.target.value);
-    document.getElementById('fxOutput').textContent = isNaN(v) ? '— 원' : Math.round(v * rate).toLocaleString() + ' 원';
-  });
-  document.getElementById('fxInputKrw').addEventListener('input', e => {
-    const v = parseFloat(e.target.value);
-    document.getElementById('fxOutputJpy').textContent = isNaN(v) ? '— 엔' : Math.round(v / rate).toLocaleString() + ' 엔';
-  });
-}
-
-fetchRate();
-
-/* ─────────────────────────────────────────────
-   NAV ACTIVE STATE (scroll spy)
-───────────────────────────────────────────── */
-function navTo(selector) {
-  const el = document.querySelector(selector);
-  if (!el) return;
-  // Reveal all fade sections up to and including the target immediately
-  const allFade = Array.from(document.querySelectorAll('.js-fade'));
-  const targetIdx = allFade.indexOf(el.closest('.js-fade') || el);
-  allFade.forEach((s, i) => { if (i <= targetIdx) s.classList.add('visible'); });
-  const navH = document.querySelector('.nav').offsetHeight;
-  const top = el.getBoundingClientRect().top + window.scrollY - navH;
-  window.scrollTo({ top, behavior: 'smooth' });
-}
-
-const sections = ['#hero','#flight','#itinerary','#transport','#restaurants','#onsen','#hotels','#checklist','#exchange','#tips','#warnings'];
-const navBtns = Array.from(document.querySelectorAll('.nb'));
-
-const spyObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const id = '#' + entry.target.id;
-      const idx = sections.indexOf(id);
-      navBtns.forEach((b, i) => b.classList.toggle('on', i === idx));
+    /* ─────────────────────────────────────────────
+       CHERRY BLOSSOM PETALS
+    ───────────────────────────────────────────── */
+    const heroAnim = document.querySelector('.hero-anim-bg');
+    for (let i = 0; i < 18; i++) {
+      const p = document.createElement('div');
+      p.className = 'petal';
+      p.style.left = Math.random() * 100 + '%';
+      p.style.animationDuration = (6 + Math.random() * 8) + 's';
+      p.style.animationDelay = (Math.random() * 8) + 's';
+      p.style.width = p.style.height = (6 + Math.random() * 8) + 'px';
+      p.style.opacity = 0.3 + Math.random() * 0.5;
+      heroAnim.appendChild(p);
     }
-  });
-}, { rootMargin: '-40% 0px -40% 0px' });
-
-sections.forEach(s => {
-  const el = document.querySelector(s);
-  if (el) spyObserver.observe(el);
-});
-
-/* ─────────────────────────────────────────────
-   FADE-IN ANIMATIONS (scroll trigger)
-───────────────────────────────────────────── */
-const fadeObserver = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-      fadeObserver.unobserve(e.target);
-    }
-  });
-}, { rootMargin: '-60px' });
-
-document.querySelectorAll('.js-fade').forEach(el => fadeObserver.observe(el));
-
-/* ─────────────────────────────────────────────
-   CHERRY BLOSSOM PETALS
-───────────────────────────────────────────── */
-const heroAnim = document.querySelector('.hero-anim-bg');
-for (let i = 0; i < 18; i++) {
-  const p = document.createElement('div');
-  p.className = 'petal';
-  p.style.left = Math.random() * 100 + '%';
-  p.style.animationDuration = (6 + Math.random() * 8) + 's';
-  p.style.animationDelay = (Math.random() * 8) + 's';
-  p.style.width = p.style.height = (6 + Math.random() * 8) + 'px';
-  p.style.opacity = 0.3 + Math.random() * 0.5;
-  heroAnim.appendChild(p);
-}
-</script>
+  </script>
 </body>
+
 </html>
