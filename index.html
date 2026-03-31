@@ -585,6 +585,136 @@
       font-weight: 700;
     }
 
+    /* ─── ITINERARY EDIT MODE ─── */
+    .iti-edit-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(37,99,235,0.12);
+      border: 1px solid rgba(96,165,250,0.3);
+      color: var(--blue4);
+      border-radius: 8px;
+      padding: 5px 13px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 0.75rem;
+      font-family: inherit;
+    }
+    .iti-edit-btn:hover { background: rgba(37,99,235,0.25); border-color: rgba(96,165,250,0.5); }
+
+    .iti-edit-bar {
+      display: none;
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 500;
+      align-items: center;
+      gap: 10px;
+      background: rgba(6,20,40,0.96);
+      border: 1px solid rgba(96,165,250,0.28);
+      border-radius: 14px;
+      padding: 10px 18px;
+      box-shadow: 0 8px 32px rgba(0,10,40,0.7);
+      backdrop-filter: blur(10px);
+      white-space: nowrap;
+    }
+    .iti-edit-bar.active { display: flex; }
+    .iti-edit-bar > span { font-size: 0.78rem; color: var(--gray); }
+
+    .iti-save-btn {
+      background: var(--blue2);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 7px 18px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.2s;
+    }
+    .iti-save-btn:hover { background: var(--blue3); }
+
+    .iti-cancel-btn {
+      background: rgba(255,255,255,0.06);
+      color: var(--gray);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 7px 14px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+    }
+    .iti-cancel-btn:hover { background: rgba(255,255,255,0.1); }
+
+    .iti-reset-btn {
+      background: none;
+      border: none;
+      color: rgba(239,68,68,0.5);
+      font-size: 0.72rem;
+      cursor: pointer;
+      padding: 0 4px;
+      font-family: inherit;
+      transition: color 0.15s;
+    }
+    .iti-reset-btn:hover { color: var(--red); }
+
+    #itinerary.editing .day-date,
+    #itinerary.editing .ev-t,
+    #itinerary.editing .ev-c,
+    #itinerary.editing .day-badge {
+      outline: 1px dashed rgba(96,165,250,0.4);
+      border-radius: 3px;
+      padding: 1px 4px;
+      cursor: text;
+      min-width: 8px;
+    }
+    #itinerary.editing .day-date:focus,
+    #itinerary.editing .ev-t:focus,
+    #itinerary.editing .ev-c:focus,
+    #itinerary.editing .day-badge:focus {
+      outline: 1px solid var(--blue3);
+      background: rgba(29,78,216,0.12);
+    }
+
+    .ev-del-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: rgba(239,68,68,0.45);
+      cursor: pointer;
+      font-size: 1rem;
+      line-height: 1;
+      padding: 0 2px;
+      flex-shrink: 0;
+      margin-left: auto;
+      transition: color 0.15s;
+    }
+    .ev-del-btn:hover { color: var(--red); }
+    #itinerary.editing .ev-del-btn { display: block; }
+
+    .ev-add-btn {
+      display: none;
+      background: none;
+      border: 1px dashed rgba(96,165,250,0.22);
+      color: var(--blue5);
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-size: 0.7rem;
+      cursor: pointer;
+      margin-top: 6px;
+      width: 100%;
+      text-align: center;
+      transition: all 0.15s;
+      font-family: inherit;
+    }
+    .ev-add-btn:hover { background: rgba(29,78,216,0.14); border-color: rgba(96,165,250,0.4); }
+    #itinerary.editing .ev-add-btn { display: block; }
+
     /* ─── TRANSPORT ─── */
     .transport-wrap {
       display: grid;
@@ -1518,6 +1648,7 @@
         <h2 class="sec-title">🗓 추천 여행 일정</h2>
         <div class="sec-bar"></div>
         <p style="font-size:0.78rem;color:var(--gray);margin-top:0.5rem;">2026.03.31 기준 추천 일정 (미정 → 참고용)</p>
+        <button class="iti-edit-btn" id="iti-edit-btn">✏️ 일정 편집</button>
       </div>
       <div class="iti-grid">
         <!-- DAY 1 -->
@@ -2525,7 +2656,103 @@
       p.style.opacity = 0.3 + Math.random() * 0.5;
       heroAnim.appendChild(p);
     }
+    /* ─────────────────────────────────────────────
+       ITINERARY EDIT MODE
+    ───────────────────────────────────────────── */
+    (function () {
+      const itiSection = document.getElementById('itinerary');
+      const itiGrid = itiSection.querySelector('.iti-grid');
+      const editBtn = document.getElementById('iti-edit-btn');
+      const editBar = document.getElementById('iti-edit-bar');
+      const saveBtn = document.getElementById('iti-save-btn');
+      const cancelBtn = document.getElementById('iti-cancel-btn');
+      const resetBtn = document.getElementById('iti-reset-btn');
+      const STORAGE_KEY = 'osaka_itinerary_v1';
+      let backupHTML = '';
+
+      // Restore saved itinerary on load
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) itiGrid.innerHTML = saved;
+
+      injectInfra();
+
+      function injectInfra() {
+        itiGrid.querySelectorAll('.ev').forEach(attachDelBtn);
+        itiGrid.querySelectorAll('.day-card').forEach(attachAddBtn);
+      }
+
+      function attachDelBtn(ev) {
+        if (ev.querySelector('.ev-del-btn')) return;
+        const btn = document.createElement('button');
+        btn.className = 'ev-del-btn';
+        btn.innerHTML = '×';
+        btn.title = '삭제';
+        btn.addEventListener('click', () => ev.remove());
+        ev.appendChild(btn);
+      }
+
+      function attachAddBtn(card) {
+        if (card.querySelector('.ev-add-btn')) return;
+        const ul = card.querySelector('.day-events');
+        const btn = document.createElement('button');
+        btn.className = 'ev-add-btn';
+        btn.textContent = '+ 항목 추가';
+        btn.addEventListener('click', () => {
+          const li = document.createElement('li');
+          li.className = 'ev';
+          li.innerHTML = '<span class="ev-t" contenteditable="true">00:00</span><span class="ev-c" contenteditable="true">내용 입력</span>';
+          attachDelBtn(li);
+          ul.appendChild(li);
+        });
+        ul.after(btn);
+      }
+
+      function enterEdit() {
+        backupHTML = itiGrid.innerHTML;
+        itiSection.classList.add('editing');
+        editBar.classList.add('active');
+        editBtn.style.display = 'none';
+        itiGrid.querySelectorAll('.day-date, .ev-t, .ev-c, .day-badge').forEach(el => {
+          el.contentEditable = 'true';
+        });
+      }
+
+      function exitEdit(doSave) {
+        if (doSave) {
+          const clone = itiGrid.cloneNode(true);
+          clone.querySelectorAll('.ev-del-btn, .ev-add-btn').forEach(el => el.remove());
+          clone.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
+          localStorage.setItem(STORAGE_KEY, clone.innerHTML);
+        } else {
+          itiGrid.innerHTML = backupHTML;
+          injectInfra();
+        }
+        itiSection.classList.remove('editing');
+        editBar.classList.remove('active');
+        editBtn.style.display = '';
+        itiGrid.querySelectorAll('[contenteditable]').forEach(el => el.removeAttribute('contenteditable'));
+      }
+
+      function resetItinerary() {
+        if (!confirm('저장된 일정을 초기화하고 기본 일정으로 되돌릴까요?')) return;
+        localStorage.removeItem(STORAGE_KEY);
+        location.reload();
+      }
+
+      editBtn.addEventListener('click', enterEdit);
+      saveBtn.addEventListener('click', () => exitEdit(true));
+      cancelBtn.addEventListener('click', () => exitEdit(false));
+      resetBtn.addEventListener('click', resetItinerary);
+    })();
   </script>
+
+  <!-- Itinerary edit floating bar -->
+  <div class="iti-edit-bar" id="iti-edit-bar">
+    <span>✏️ 편집 중</span>
+    <button class="iti-save-btn" id="iti-save-btn">💾 저장</button>
+    <button class="iti-cancel-btn" id="iti-cancel-btn">취소</button>
+    <button class="iti-reset-btn" id="iti-reset-btn" title="기본 일정으로 초기화">🗑 초기화</button>
+  </div>
 </body>
 
 </html>
